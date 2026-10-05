@@ -1,0 +1,23 @@
+<div class="container-fluid p-3">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h1 class="h3 text-center mb-4">Create account</h1>
+
+          <%= form_with model: @user, local: true do |form| %>
+            <div class="mb-3">
+              <%= form.label :username, class: "form-label" %>
+              <%= form.text_field :username, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :email, class: "form-label" %>
+              <%= form.email_field :email, class: "form-control" %>
+            </div>
+            <%= form.submit "Create account", class: "btn btn-primary w-100" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
