@@ -1,0 +1,60 @@
+<form class="demo-input-form demo-retro-kit" data-controller="bad-input">
+  <header class="demo-retro-heading">
+    <div>
+      <strong>INPUT FIELDS</strong>
+      <span>CLASSIC LOOK. TIMELESS FEEL.</span>
+    </div>
+    <span class="demo-retro-version">PROFILE SETUP</span>
+  </header>
+
+  <div class="demo-retro-grid">
+    <section class="demo-retro-panel">
+      <h4 class="demo-retro-title">Profile Details</h4>
+      <div class="demo-retro-panel-body">
+        <label for="bad-first-name">Name</label>
+        <input id="bad-first-name" name="first_name" class="demo-retro-input demo-retro-focused" type="text" data-action="input->bad-input#rewrite">
+
+        <label for="bad-email">Email</label>
+        <input id="bad-email" name="email" class="demo-retro-input" type="email">
+
+        <label for="bad-phone">Phone</label>
+        <input id="bad-phone" name="phone" class="demo-retro-input" type="tel" data-action="input->bad-input#rewrite">
+
+        <label for="bad-address">Address</label>
+        <input id="bad-address" name="address" class="demo-retro-input" type="text">
+
+        <label for="bad-postal-code">Postal code</label>
+        <input id="bad-postal-code" name="postal_code" class="demo-retro-input demo-retro-disabled" type="text" disabled>
+      </div>
+    </section>
+
+    <div class="demo-retro-stack">
+      <section class="demo-retro-panel">
+        <h4 class="demo-retro-title">Options</h4>
+        <div class="demo-retro-panel-body demo-retro-options">
+          <label><input name="remember_me" type="checkbox"> Keep me signed in</label>
+          <label><input name="updates" type="checkbox"> Send updates</label>
+          <label><input name="account_type" type="radio" value="personal"> Personal</label>
+          <label><input name="account_type" type="radio" value="work"> Work</label>
+        </div>
+      </section>
+
+      <section class="demo-retro-panel">
+        <h4 class="demo-retro-title">Actions</h4>
+        <div class="demo-retro-panel-body demo-retro-actions">
+          <button type="button" disabled>Continue</button>
+          <button type="button" disabled>Save</button>
+          <button type="button" disabled>Cancel</button>
+        </div>
+      </section>
+
+      <section class="demo-retro-panel">
+        <h4 class="demo-retro-title">Search</h4>
+        <div class="demo-retro-panel-body">
+          <label for="bad-search">Search</label>
+          <input id="bad-search" name="search" class="demo-retro-input" type="search" value="Profile">
+        </div>
+      </section>
+    </div>
+  </div>
+</form>

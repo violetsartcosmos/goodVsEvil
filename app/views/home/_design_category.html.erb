@@ -1,0 +1,18 @@
+<div class="showcase-heading mb-4">
+  <span class="small text-uppercase fw-semibold text-info">Explore the difference</span>
+  <h2 class="display-6 fw-bold mt-2 mb-2"><%= title %></h2>
+  <p class="text-body-secondary mb-0"><%= description %></p>
+</div>
+
+<% good_content = capture { yield } %>
+
+<div class="card showcase-demo-card border-0 shadow-lg">
+  <div class="card-header showcase-demo-header d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 p-md-4">
+    <%= render "good_bad_toggle", key: key, title: title %>
+  </div>
+
+  <div class="tab-content">
+    <%= render "good_design", key: key, title: good_title, description: good_description, lesson: lesson, content: good_content %>
+    <%= render "bad_design", key: key, title: bad_title, description: bad_description, bad_design_partial: bad_design_partial %>
+  </div>
+</div>
