@@ -1,21 +1,26 @@
 <section class="tab-pane fade show active p-3 p-md-4" id="<%= key %>-good" role="tabpanel" aria-labelledby="<%= key %>-good-tab" tabindex="0">
-  <div class="row g-4 align-items-stretch">
-    <div class="col-12 <%= key == "inputs" ? "col-md-8" : "col-md-7" %>">
-      <div class="showcase-preview h-100">
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <span class="showcase-status-dot showcase-status-good"></span>
-          <span class="small text-body-secondary">GOOD DESIGN</span>
-        </div>
+  <ul class="nav nav-tabs showcase-explanation-tabs" role="tablist" aria-label="Good design example and explanation">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="<%= key %>-good-example-tab" data-bs-toggle="tab" data-bs-target="#<%= key %>-good-example" type="button" role="tab" aria-controls="<%= key %>-good-example" aria-selected="true">Good Design</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="<%= key %>-good-why-tab" data-bs-toggle="tab" data-bs-target="#<%= key %>-good-why" type="button" role="tab" aria-controls="<%= key %>-good-why" aria-selected="false">Why?</button>
+    </li>
+  </ul>
+
+  <div class="tab-content showcase-explanation-content">
+    <div class="tab-pane fade show active" id="<%= key %>-good-example" role="tabpanel" aria-labelledby="<%= key %>-good-example-tab" tabindex="0">
+      <div class="showcase-preview">
         <h3 class="h5 mb-1"><%= title %></h3>
         <p class="small text-body-secondary mb-4"><%= description %></p>
         <%= content %>
       </div>
     </div>
-    <div class="col-12 <%= key == "inputs" ? "col-md-4" : "col-md-5" %>">
-      <div class="showcase-takeaway h-100 p-3 p-lg-4 rounded-4">
+    <div class="tab-pane fade" id="<%= key %>-good-why" role="tabpanel" aria-labelledby="<%= key %>-good-why-tab" tabindex="0">
+      <div class="showcase-takeaway p-3 p-lg-4 rounded-bottom-3">
         <span class="showcase-takeaway-icon mb-3" aria-hidden="true">✦</span>
-        <h4 class="h6">Why it works</h4>
-        <p class="small text-body-secondary mb-0"><%= lesson %></p>
+        <h3 class="h5">Why it works</h3>
+        <p class="text-body-secondary mb-0"><%= lesson %></p>
       </div>
     </div>
   </div>

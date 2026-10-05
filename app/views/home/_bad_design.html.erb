@@ -1,13 +1,21 @@
 <section class="tab-pane fade p-3 p-md-4" id="<%= key %>-bad" role="tabpanel" aria-labelledby="<%= key %>-bad-tab" tabindex="0">
-  <div class="row g-4 align-items-stretch">
-    <div class="col-12 col-xl-7 order-2 order-xl-1">
-      <div class="showcase-preview demo-bad demo-bad-<%= key %> h-100">
+  <ul class="nav nav-tabs showcase-explanation-tabs" role="tablist" aria-label="Bad design example and explanation">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="<%= key %>-bad-example-tab" data-bs-toggle="tab" data-bs-target="#<%= key %>-bad-example" type="button" role="tab" aria-controls="<%= key %>-bad-example" aria-selected="true">Bad Design</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="<%= key %>-bad-why-tab" data-bs-toggle="tab" data-bs-target="#<%= key %>-bad-why" type="button" role="tab" aria-controls="<%= key %>-bad-why" aria-selected="false">Why?</button>
+    </li>
+  </ul>
+
+  <div class="tab-content showcase-explanation-content">
+    <div class="tab-pane fade show active" id="<%= key %>-bad-example" role="tabpanel" aria-labelledby="<%= key %>-bad-example-tab" tabindex="0">
+      <div class="showcase-preview demo-bad demo-bad-<%= key %>">
         <%= render bad_design_partial %>
       </div>
     </div>
-    <div class="col-12 col-xl-5 order-1 order-xl-2">
-      <aside class="showcase-takeaway showcase-takeaway-bad h-100 p-3 p-lg-4 rounded-4">
-        <h3 class="h5 mb-3">Why it’s hard to use</h3>
+    <div class="tab-pane fade" id="<%= key %>-bad-why" role="tabpanel" aria-labelledby="<%= key %>-bad-why-tab" tabindex="0">
+      <aside class="showcase-takeaway showcase-takeaway-bad p-3 p-lg-4 rounded-bottom-3">
         <% if key == "inputs" %>
           <ol class="demo-behavior-list">
             <li>Changing what people type destroys trust and makes errors hard to fix.</li>
