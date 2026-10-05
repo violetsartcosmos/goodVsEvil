@@ -1,27 +1,78 @@
-<form class="demo-input-form demo-retro-kit" data-controller="bad-input">
-  <section class="demo-retro-panel demo-retro-main-fields" data-section-number="1">
-    <div><input name="first_name" aria-label="Name" class="demo-retro-input demo-retro-focused" type="text" data-action="input->bad-input#rewrite"></div>
-    <div><input name="last_name" aria-label="Last name" class="demo-retro-input" type="text" data-action="input->bad-input#rewrite"></div>
-    <div><input name="username" aria-label="Username" class="demo-retro-input" type="text" data-action="input->bad-input#rewrite"></div>
-    <div><input name="email" aria-label="Email" class="demo-retro-input" type="email" data-action="input->bad-input#rewrite"></div>
-  </section>
+<section class="demo-windows-window" aria-label="Windows-style profile setup window">
+  <header class="demo-windows-titlebar">
+    <span class="demo-windows-app-icon" aria-hidden="true">P</span>
+    <span class="demo-windows-title">Profile Setup</span>
+    <div class="demo-windows-controls" aria-hidden="true">
+      <span>_</span><span>□</span><span>×</span>
+    </div>
+  </header>
+  <nav class="demo-windows-menubar" aria-label="Window menu">
+    <span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>H</u>elp</span>
+  </nav>
+  <div class="demo-windows-screen">
+    <form class="demo-input-form demo-retro-kit">
+      <section class="demo-retro-panel demo-retro-main-fields" data-section-number="1">
+        <div><input name="first_name" aria-label="Name" class="demo-retro-input demo-retro-focused bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="last_name" aria-label="Last name" class="demo-retro-input bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="username" aria-label="Username" class="demo-retro-input bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="email" aria-label="Email" class="demo-retro-input bad-input" type="email" oninput="randomizeBadInput(this)"></div>
+      </section>
 
-  <div class="demo-retro-sections">
-    <section class="demo-retro-panel demo-retro-unreachable-fields" data-section-number="2">
-      <input name="phone" aria-label="Phone" class="demo-retro-input demo-retro-unreachable" type="tel" disabled>
-      <input name="address" aria-label="Address" class="demo-retro-input demo-retro-unreachable" type="text" disabled>
-      <input name="language" aria-label="Language" class="demo-retro-input demo-retro-unreachable" type="text" disabled>
-    </section>
+      <div class="demo-retro-sections">
+        <section class="demo-retro-panel demo-retro-tiny-fields" data-section-number="2">
+          <input name="phone" aria-label="Phone" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+          <input name="address" aria-label="Address" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+          <input name="language" aria-label="Language" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+          <% 10.times do |index| %>
+            <input name="single_character_<%= index + 1 %>" aria-label="Single-character field <%= index + 1 %>" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+          <% end %>
+        </section>
 
-    <section class="demo-retro-panel demo-retro-options" aria-label="Options" data-section-number="3">
-      <% 10.times do |index| %>
-        <input name="option_<%= index + 1 %>" aria-label="Option <%= index + 1 %>" type="checkbox">
-      <% end %>
-    </section>
+        <section class="demo-retro-panel demo-retro-options" aria-label="Options" data-section-number="3">
+          <% 10.times do |index| %>
+            <input name="option_<%= index + 1 %>" aria-label="Option <%= index + 1 %>" class="bad-input" type="checkbox" oninput="randomizeBadInput(this)">
+          <% end %>
+        </section>
 
-    <section class="demo-retro-panel demo-retro-actions" aria-label="Actions" data-section-number="4">
-      <button type="button" disabled>Flibber</button>
-      <button type="button" disabled><img src="data:image/gif;base64,broken" alt="Save"></button>
-    </section>
+        <section class="demo-retro-panel demo-retro-actions" aria-label="Actions" data-section-number="4">
+          <button type="button" disabled><span data-button-label>Flibber</span></button>
+          <button type="button" disabled><span data-button-label>Save</span><img src="data:image/gif;base64,broken" alt=""></button>
+        </section>
+
+        <section class="demo-retro-panel demo-retro-buttons" aria-label="More actions" data-section-number="5">
+          <% 10.times do |index| %>
+            <button type="button" disabled><span data-button-label>Button <%= index + 1 %></span></button>
+          <% end %>
+        </section>
+
+        <section class="demo-retro-panel demo-retro-slider" aria-label="Unpredictable slider" data-section-number="6">
+          <input class="bad-input" type="range" min="0" max="100" value="0" aria-label="Unpredictable value" oninput="randomizeBadInput(this)">
+          <output>0</output>
+        </section>
+
+        <section class="demo-retro-panel demo-retro-equation" aria-label="Answer the equation" data-section-number="7">
+          <span>1 + 1 =</span>
+          <input class="bad-input" type="text" aria-label="Answer" autocomplete="off" oninput="randomizeBadInput(this)">
+        </section>
+
+        <section class="demo-retro-panel demo-retro-labels" aria-label="Unrelated labels" data-section-number="8">
+          <label>Account</label>
+          <label>Required</label>
+          <label>OPTIONAL</label>
+          <label>PROFILE</label>
+          <label>email address</label>
+          <label>IMPORTANT!</label>
+          <label>status</label>
+          <label>Good</label>
+          <label>WARNING</label>
+          <label>CONTINUE</label>
+        </section>
+
+        <section class="demo-retro-panel demo-retro-mover-anchor" aria-label="Moving action" data-section-number="9"></section>
+        <button class="demo-retro-moving-button" type="button" data-button-label>Catch me</button>
+      </div>
+    </form>
   </div>
-</form>
+  <footer class="demo-windows-statusbar">
+    <span>Ready</span><span>Profile Setup</span>
+  </footer>

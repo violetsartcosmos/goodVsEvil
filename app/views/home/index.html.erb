@@ -30,22 +30,154 @@
             key: "inputs",
             title: "Inputs & forms",
             description: "A thoughtful form makes the next step obvious and keeps the effort small.",
-            good_title: "A form that feels easy",
-            good_description: "Clear labels, helpful context, easy-to-target checkbox, and one obvious next step.",
+            good_title: "A profile that's easy to update",
+            good_description: "A complete profile form with clear groups, helpful guidance, and predictable controls.",
             bad_title: "Inputs that misbehave",
             bad_description: "Typing scrambles the text, several fields are impossible to reach, and none of the actions respond.",
             bad_design_partial: "input_form_bad_design",
-            lesson: "Persistent labels and a clear primary action help people understand what to do—even after they start typing." do %>
-            <div class="demo-good-form">
-              <label for="good-email" class="form-label">Email address</label>
-              <input id="good-email" class="form-control mb-2" type="email" placeholder="you@example.com" autocomplete="email">
-              <div class="form-text mb-3">We’ll only use this to send your sign-in link.</div>
-              <h4 class="h6">Checkbox target size</h4>
-              <label class="form-check demo-checkbox-good mb-3" for="good-remember">
-                <input id="good-remember" class="form-check-input" type="checkbox">
-                <span class="form-check-label">Keep me signed in</span>
-              </label>
-              <button type="button" class="btn btn-info fw-semibold">Send me a link</button>
+            lesson: "Clear grouping, persistent labels, optional guidance, and a predictable save action make a detailed profile feel manageable." do %>
+            <div class="profile-editor">
+              <section class="profile-editor-hero rounded-4 mb-3">
+                <div class="profile-editor-cover"></div>
+                <div class="profile-editor-identity d-flex flex-wrap align-items-end gap-3 px-3 px-md-4">
+                  <div class="profile-editor-avatar" aria-hidden="true">JM</div>
+                  <div class="flex-grow-1 pb-1">
+                    <h3 class="h5 mb-1">Jordan Morgan</h3>
+                    <p class="small text-body-secondary mb-0">@jordanm · Member since 2023</p>
+                  </div>
+                  <button type="button" class="btn btn-outline-light btn-sm mb-1">Preview profile</button>
+                </div>
+              </section>
+
+              <nav class="nav nav-underline profile-editor-nav mb-3" aria-label="Profile settings">
+                <span class="nav-link active">Personal information</span>
+                <span class="nav-link">Account</span>
+                <span class="nav-link">Privacy</span>
+              </nav>
+
+              <div class="row g-3 mx-0">
+                <div class="col-12 col-xl-8">
+                  <section class="card profile-editor-card h-100">
+                    <div class="card-header bg-transparent px-3 px-md-4 pt-3">
+                      <h4 class="h6 mb-1">Personal information</h4>
+                      <p class="small text-body-secondary mb-0">Update the details people see on your profile.</p>
+                    </div>
+                    <div class="card-body px-3 px-md-4">
+                      <div class="mb-3">
+                        <label for="profile-photo" class="form-label">Profile photo</label>
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                          <div class="profile-editor-avatar profile-editor-avatar-small" aria-hidden="true">JM</div>
+                          <div>
+                            <input id="profile-photo" class="form-control form-control-sm" type="file" accept="image/*">
+                            <div class="form-text">Use a clear photo so people can recognize you.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                          <label for="profile-first-name" class="form-label">First name</label>
+                          <input id="profile-first-name" class="form-control" type="text" value="Jordan" autocomplete="given-name">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-last-name" class="form-label">Last name</label>
+                          <input id="profile-last-name" class="form-control" type="text" value="Morgan" autocomplete="family-name">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-username" class="form-label">Username</label>
+                          <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input id="profile-username" class="form-control" type="text" value="jordanm" autocomplete="username">
+                          </div>
+                          <div class="form-text">Your profile link is goodvsevil.example/@jordanm</div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-email" class="form-label">Email address</label>
+                          <input id="profile-email" class="form-control" type="email" value="jordan@example.com" autocomplete="email">
+                          <div class="form-text">Used for account updates and sign-in.</div>
+                        </div>
+                        <div class="col-12">
+                          <label for="profile-bio" class="form-label">About</label>
+                          <textarea id="profile-bio" class="form-control" rows="3" maxlength="240">Designer, curious maker, and collector of little ideas.</textarea>
+                          <div class="d-flex justify-content-between form-text">
+                            <span>A short introduction helps people get to know you.</span>
+                            <span>61 / 240</span>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-location" class="form-label">Location <span class="text-body-secondary fw-normal">(optional)</span></label>
+                          <input id="profile-location" class="form-control" type="text" value="Portland, Oregon" autocomplete="address-level2">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-website" class="form-label">Website <span class="text-body-secondary fw-normal">(optional)</span></label>
+                          <input id="profile-website" class="form-control" type="url" placeholder="https://example.com" value="https://jordanm.example">
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-language" class="form-label">Language</label>
+                          <select id="profile-language" class="form-select">
+                            <option selected>English (United States)</option>
+                            <option>Español</option>
+                            <option>Français</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <label for="profile-timezone" class="form-label">Time zone</label>
+                          <select id="profile-timezone" class="form-select">
+                            <option selected>Pacific Time (US &amp; Canada)</option>
+                            <option>Mountain Time (US &amp; Canada)</option>
+                            <option>Eastern Time (US &amp; Canada)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between align-items-center gap-2 px-3 px-md-4 py-3">
+                      <span class="small text-body-secondary">Changes are saved to your profile.</span>
+                      <button type="button" class="btn btn-info fw-semibold px-4">Save changes</button>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="col-12 col-xl-4">
+                  <div class="d-grid gap-3">
+                    <section class="card profile-editor-card">
+                      <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                          <h4 class="h6 mb-0">Profile visibility</h4>
+                          <span class="badge rounded-pill text-bg-success">Public</span>
+                        </div>
+                        <p class="small text-body-secondary">Your name, photo, and about section can be seen by anyone.</p>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" role="switch" id="profile-public" checked>
+                          <label class="form-check-label small" for="profile-public">Make profile public</label>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="card profile-editor-card">
+                      <div class="card-body p-3">
+                        <h4 class="h6 mb-1">Email preferences</h4>
+                        <p class="small text-body-secondary">Choose which updates arrive in your inbox.</p>
+                        <div class="form-check mb-2">
+                          <input class="form-check-input" type="checkbox" id="profile-product-updates" checked>
+                          <label class="form-check-label small" for="profile-product-updates">Product news and tips</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="profile-security-alerts" checked>
+                          <label class="form-check-label small" for="profile-security-alerts">Security alerts</label>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="card profile-editor-card">
+                      <div class="card-body p-3">
+                        <h4 class="h6 mb-2">Profile strength</h4>
+                        <div class="progress mb-2" role="progressbar" aria-label="Profile completeness" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-info" style="width: 80%"></div>
+                        </div>
+                        <p class="small text-body-secondary mb-0">You’re off to a great start. Add a photo to complete your profile.</p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
             </div>
           <% end %>
         </section>

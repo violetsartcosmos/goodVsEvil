@@ -312,8 +312,89 @@ body {
   color: #ff7d87;
 }
 
-.demo-good-form {
-  max-width: 25rem;
+.profile-editor-hero,
+.profile-editor-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #191a22;
+}
+
+.profile-editor-cover {
+  height: 5rem;
+  border-radius: 1rem 1rem 0 0;
+  background:
+    radial-gradient(circle at 82% 25%, rgba(255, 255, 255, 0.3) 0 0.3rem, transparent 0.35rem),
+    radial-gradient(ellipse at 80% 145%, rgba(49, 215, 190, 0.75) 0 22%, transparent 22.5%),
+    linear-gradient(115deg, #5749b8, #9b65df 42%, #e16ea4 72%, #ee9d70);
+}
+
+.profile-editor-identity {
+  padding-bottom: 0.9rem;
+}
+
+.profile-editor-avatar {
+  display: grid;
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  margin-top: -1.5rem;
+  place-items: center;
+  border: 4px solid #191a22;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #8b7bff, #37cdb8);
+  color: #101116;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.profile-editor-avatar-small {
+  flex-basis: 3rem;
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.profile-editor-nav {
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-editor-nav .nav-link {
+  padding: 0.45rem 0.35rem;
+  border-bottom: 2px solid transparent;
+  color: var(--bs-secondary-color);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.profile-editor-nav .nav-link.active {
+  border-bottom-color: #55d8be;
+  color: var(--bs-body-color);
+}
+
+.profile-editor .form-label {
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.profile-editor .form-control,
+.profile-editor .form-select,
+.profile-editor .input-group-text {
+  font-size: 0.85rem;
+}
+
+.profile-editor .form-text {
+  font-size: 0.7rem;
+}
+
+.profile-editor textarea {
+  resize: vertical;
+}
+
+.profile-editor .progress {
+  height: 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .demo-checkbox-good {
@@ -409,10 +490,101 @@ body {
   box-shadow: none;
 }
 
+.demo-windows-window {
+  border: 2px outset #e5e5e5;
+  background: #c0c0c0;
+  box-shadow: 2px 2px 0 #101116;
+  color: #111;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.demo-windows-titlebar {
+  display: flex;
+  min-height: 1.8rem;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.25rem;
+  background: linear-gradient(90deg, #08246b, #2865bd);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.demo-windows-app-icon {
+  display: grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  border: 1px solid #fff;
+  background: #c0c0c0;
+  color: #08246b;
+  font-size: 0.7rem;
+}
+
+.demo-windows-title {
+  flex: 1;
+}
+
+.demo-windows-controls {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.demo-windows-controls span {
+  display: grid;
+  width: 1.2rem;
+  height: 1.15rem;
+  place-items: center;
+  border: 1px outset #fff;
+  background: #c0c0c0;
+  color: #111;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.demo-windows-menubar {
+  display: flex;
+  min-height: 1.55rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.45rem;
+  border-bottom: 1px solid #808080;
+  background: #c0c0c0;
+  color: #111;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 0.72rem;
+}
+
+.demo-windows-screen {
+  min-height: 22rem;
+  padding: 0.25rem;
+  border: 1px inset #f4f4f4;
+  background: #c0c0c0;
+}
+
+.demo-windows-statusbar {
+  display: flex;
+  min-height: 1.45rem;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.25rem;
+  border-top: 1px solid #808080;
+  background: #c0c0c0;
+  color: #222;
+  font: 0.68rem Tahoma, Arial, sans-serif;
+}
+
+.demo-windows-statusbar span {
+  flex: 1;
+  min-height: 1rem;
+  padding: 0.05rem 0.25rem;
+  border: 1px inset #f4f4f4;
+}
+
 .demo-retro-kit {
   overflow: visible;
-  padding: 0.55rem;
-  background: transparent;
+  padding: 0.35rem;
+  background: #c0c0c0;
   color: #242720;
   color-scheme: light;
   font-family: Tahoma, Arial, sans-serif;
@@ -420,6 +592,7 @@ body {
 }
 
 .demo-retro-sections {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.55rem;
@@ -437,10 +610,14 @@ body {
 .demo-retro-panel[data-section-number]::before {
   position: absolute;
   top: 0.45rem;
-  left: -1.25rem;
+  left: 0.35rem;
   color: #85877f;
   content: attr(data-section-number) ".";
   font: inherit;
+}
+
+.demo-retro-panel[data-section-number] {
+  padding-left: 1.4rem;
 }
 
 .demo-retro-main-fields {
@@ -463,13 +640,28 @@ body {
   height: 1.65rem;
 }
 
-.demo-retro-unreachable-fields {
+.demo-retro-tiny-fields {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   gap: 0.35rem;
-  height: 2rem;
+  min-height: 2rem;
   padding: 0.35rem;
+}
+
+.demo-retro-single-character {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 1px solid #8b8b83;
+  border-radius: 0;
+  background: #fffef9;
+  color: #222;
+  font: inherit;
+  text-align: center;
 }
 
 .demo-retro-input {
@@ -499,15 +691,6 @@ body {
 .demo-retro-input.demo-retro-disabled {
   background: #d5d4cd;
   color: #85857f;
-}
-
-.demo-retro-input.demo-retro-unreachable {
-  width: 1px;
-  min-width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  pointer-events: none;
 }
 
 .demo-retro-options {
@@ -565,6 +748,104 @@ body {
   opacity: 1;
 }
 
+.demo-retro-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.35rem;
+}
+
+.demo-retro-buttons button {
+  padding: 0.15rem 0.45rem;
+  border: 1px solid #85857e;
+  border-radius: 0;
+  background: #d8d6cb;
+  box-shadow: inset 1px 1px #fffef6, inset -1px -1px #aaa99f;
+  color: #5a5b55;
+  font: inherit;
+}
+
+.demo-retro-buttons button:disabled {
+  opacity: 1;
+}
+
+.demo-retro-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem;
+}
+
+.demo-retro-labels label {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid currentColor;
+  font: inherit;
+}
+
+.demo-retro-labels label:nth-child(1) { background: #163b68; color: #fff; font-weight: bold; }
+.demo-retro-labels label:nth-child(2) { background: #ffe96a; color: #7b1515; text-decoration: underline; }
+.demo-retro-labels label:nth-child(3) { background: #8c3fb0; color: #fff; font-style: italic; letter-spacing: 0.12em; }
+.demo-retro-labels label:nth-child(4) { background: #a5efb8; color: #154d24; font-family: Georgia, serif; }
+.demo-retro-labels label:nth-child(5) { background: #f5a6c8; color: #38102a; text-transform: lowercase; }
+.demo-retro-labels label:nth-child(6) { background: #ff6c38; color: #25100a; font-size: 0.9rem; font-weight: 900; }
+.demo-retro-labels label:nth-child(7) { background: #a5e6e2; color: #073c58; font-family: monospace; }
+.demo-retro-labels label:nth-child(8) { background: #d6d6d6; color: #222; text-shadow: 1px 1px #fff; }
+.demo-retro-labels label:nth-child(9) { background: #aa142e; color: #fff4a8; font-size: 0.6rem; letter-spacing: 0.2em; }
+.demo-retro-labels label:nth-child(10) { background: #e2a32c; color: #4025a0; font-family: cursive; font-weight: bold; }
+
+.demo-retro-mover {
+  min-height: 2rem;
+}
+
+.demo-retro-mover-anchor {
+  min-height: 2rem;
+}
+
+.demo-retro-moving-button {
+  position: absolute;
+  z-index: 3;
+  padding: 0.2rem 0.45rem;
+  border: 2px outset #d8d6cb;
+  border-radius: 0;
+  background: #d8d6cb;
+  color: #222;
+  font: inherit;
+}
+
+.demo-retro-slider,
+.demo-retro-equation {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2rem;
+  padding: 0.35rem;
+}
+
+.demo-retro-slider input {
+  width: 12rem;
+  accent-color: #6b7568;
+}
+
+.demo-retro-slider output {
+  min-width: 2ch;
+  color: #242720;
+  font: inherit;
+}
+
+.demo-retro-equation input {
+  width: 3.5rem;
+  height: 1.5rem;
+  padding: 0 0.2rem;
+  border: 1px solid #8b8b83;
+  border-radius: 0;
+  background: #fffef9;
+  color: #222;
+  font: inherit;
+}
+
 .demo-retro-actions img {
   display: block;
   width: 1rem;
@@ -598,14 +879,14 @@ body {
   background: #191a22;
 }
 
-#inputs-bad .row > :first-child {
-  position: relative;
-  z-index: 0;
-}
+@media (max-width: 575.98px) {
+  .demo-windows-controls span {
+    width: 1rem;
+  }
 
-#inputs-bad .row > :last-child {
-  position: relative;
-  z-index: 2;
+  .demo-windows-menubar {
+    gap: 0.7rem;
+  }
 }
 
 .demo-style-bad {
