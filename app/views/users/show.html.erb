@@ -1,10 +1,82 @@
-<p>
-  Username: <%= @user.username %>
-</p>
-<p>
-  Email: <%= @user.email %>
-</p>
+<main class="container profile-page py-5">
+  <div class="d-flex justify-content-end mb-3">
+    <%= link_to "Back to users", users_path, class: "btn btn-outline-light" %>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+  <section class="profile-hero card border-0 shadow-lg mb-4 text-center">
+    <div class="profile-hero-art"></div>
+    <div class="card-body position-relative pt-0 pb-4">
+      <div class="profile-avatar profile-avatar-lg mx-auto" aria-hidden="true">
+        <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+      </div>
+      <h1 class="h2 fw-bold mt-3 mb-1"><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || @user.username %></h1>
+      <p class="text-body-secondary mb-3">@<%= @user.username %></p>
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-info fw-semibold px-4" %>
+    </div>
+  </section>
 
-<%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="row g-4">
+    <div class="col-12 col-lg-7">
+      <section class="card profile-card border-0 shadow-lg h-100">
+        <div class="card-header bg-transparent border-0 px-4 pt-4">
+          <h2 class="h5 mb-1">Personal details</h2>
+          <p class="small text-body-secondary mb-0">A little bit about you</p>
+        </div>
+        <div class="card-body px-4 pb-4">
+          <dl class="profile-details mb-0">
+            <div><dt>Full name</dt><dd><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || "Not added yet" %></dd></div>
+            <div><dt>Email address</dt><dd><%= @user.email %></dd></div>
+            <div><dt>Phone number</dt><dd><%= @user.phone.presence || "Not added yet" %></dd></div>
+            <div><dt>Address</dt><dd><%= @user.address.presence || "Not added yet" %></dd></div>
+            <div><dt>Language</dt><dd><%= @user.language.presence || "Not added yet" %></dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-12 col-lg-5">
+      <section class="card profile-card border-0 shadow-lg h-100">
+        <div class="card-header bg-transparent border-0 px-4 pt-4">
+          <h2 class="h5 mb-1">Account details</h2>
+          <p class="small text-body-secondary mb-0">Your account at a glance</p>
+        </div>
+        <div class="card-body px-4 pb-4">
+          <dl class="profile-details mb-0">
+            <div><dt>Username</dt><dd><%= @user.username %></dd></div>
+            <div><dt>Member since</dt><dd><%= l(@user.created_at, format: :long) %></dd></div>
+            <div><dt>Profile status</dt><dd><span class="badge rounded-pill text-bg-success">Looking good</span></dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-12">
+      <section class="card profile-card border-0 shadow-lg">
+        <div class="card-header bg-transparent border-0 px-4 pt-4">
+          <h2 class="h5 mb-1">Activity</h2>
+          <p class="small text-body-secondary mb-0">A quiet little timeline of your account</p>
+        </div>
+        <div class="card-body px-4 pb-4">
+          <div class="profile-activity">
+            <div class="profile-activity-dot"></div>
+            <div>
+              <h3 class="h6 mb-1">You joined Good Vs Evil</h3>
+              <p class="small text-body-secondary mb-0">Account created <%= l(@user.created_at, format: :long) %></p>
+            </div>
+          </div>
+          <div class="profile-activity">
+            <div class="profile-activity-dot"></div>
+            <div>
+              <h3 class="h6 mb-1">Profile details updated</h3>
+              <p class="small text-body-secondary mb-0">Last updated <%= l(@user.updated_at, format: :long) %></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end mt-4">
+    <%= link_to "Delete account", user_path(@user), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this user?" }, class: "btn btn-outline-danger" %>
+  </div>
+</main>

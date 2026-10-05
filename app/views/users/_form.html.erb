@@ -1,0 +1,93 @@
+<main class="container profile-page py-5">
+  <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+    <div>
+      <div class="text-uppercase small fw-semibold text-info mb-2">Your space</div>
+      <h1 class="display-6 fw-bold mb-1"><%= title %></h1>
+      <p class="text-body-secondary mb-0">A few details make your profile feel like yours.</p>
+    </div>
+    <%= link_to "Back to users", users_path, class: "btn btn-outline-light" %>
+  </div>
+
+  <%= form_with model: @user, local: true do |form| %>
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <h2 class="h6 alert-heading">A few details need your attention:</h2>
+        <ul class="mb-0">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="profile-banner card border-0 shadow-lg mb-4">
+      <div class="profile-banner-art"></div>
+      <div class="card-body d-flex flex-wrap align-items-center gap-3 pt-0">
+        <div class="profile-avatar" aria-hidden="true">
+          <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+        </div>
+        <div class="pt-3">
+          <h2 class="h4 mb-1"><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || "Your name here" %></h2>
+          <p class="text-body-secondary mb-0">Your profile, your little corner of the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <section class="card profile-card border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-1">Personal information</h2>
+            <p class="small text-body-secondary mb-4">How should we know you?</p>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <%= form.label :first_name, class: "form-label" %>
+                <%= form.text_field :first_name, class: "form-control", autocomplete: "given-name" %>
+              </div>
+              <div class="col-sm-6">
+                <%= form.label :last_name, class: "form-label" %>
+                <%= form.text_field :last_name, class: "form-control", autocomplete: "family-name" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :username, class: "form-label" %>
+                <%= form.text_field :username, class: "form-control", autocomplete: "username" %>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <section class="card profile-card border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-1">Contact &amp; details</h2>
+            <p class="small text-body-secondary mb-4">The little things that help you feel at home.</p>
+            <div class="row g-3">
+              <div class="col-12">
+                <%= form.label :email, class: "form-label" %>
+                <%= form.email_field :email, class: "form-control", autocomplete: "email" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :phone, class: "form-label" %>
+                <%= form.telephone_field :phone, class: "form-control", autocomplete: "tel" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :address, class: "form-label" %>
+                <%= form.text_field :address, class: "form-control", autocomplete: "street-address" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :language, class: "form-label" %>
+                <%= form.text_field :language, class: "form-control", placeholder: "e.g. English" %>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-end gap-2 mt-4">
+      <%= link_to "Cancel", @user.persisted? ? user_path(@user) : users_path, class: "btn btn-outline-light" %>
+      <%= form.submit submit_label, class: "btn btn-info px-4 fw-semibold" %>
+    </div>
+  <% end %>
+</main>
