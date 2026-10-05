@@ -1,60 +1,27 @@
 <form class="demo-input-form demo-retro-kit" data-controller="bad-input">
-  <header class="demo-retro-heading">
-    <div>
-      <strong>INPUT FIELDS</strong>
-      <span>CLASSIC LOOK. TIMELESS FEEL.</span>
-    </div>
-    <span class="demo-retro-version">PROFILE SETUP</span>
-  </header>
+  <section class="demo-retro-panel demo-retro-main-fields" data-section-number="1">
+    <div><input name="first_name" aria-label="Name" class="demo-retro-input demo-retro-focused" type="text" data-action="input->bad-input#rewrite"></div>
+    <div><input name="last_name" aria-label="Last name" class="demo-retro-input" type="text" data-action="input->bad-input#rewrite"></div>
+    <div><input name="username" aria-label="Username" class="demo-retro-input" type="text" data-action="input->bad-input#rewrite"></div>
+    <div><input name="email" aria-label="Email" class="demo-retro-input" type="email" data-action="input->bad-input#rewrite"></div>
+  </section>
 
-  <div class="demo-retro-grid">
-    <section class="demo-retro-panel">
-      <h4 class="demo-retro-title">Profile Details</h4>
-      <div class="demo-retro-panel-body">
-        <label for="bad-first-name">Name</label>
-        <input id="bad-first-name" name="first_name" class="demo-retro-input demo-retro-focused" type="text" data-action="input->bad-input#rewrite">
-
-        <label for="bad-email">Email</label>
-        <input id="bad-email" name="email" class="demo-retro-input" type="email">
-
-        <label for="bad-phone">Phone</label>
-        <input id="bad-phone" name="phone" class="demo-retro-input" type="tel" data-action="input->bad-input#rewrite">
-
-        <label for="bad-address">Address</label>
-        <input id="bad-address" name="address" class="demo-retro-input" type="text">
-
-        <label for="bad-postal-code">Postal code</label>
-        <input id="bad-postal-code" name="postal_code" class="demo-retro-input demo-retro-disabled" type="text" disabled>
-      </div>
+  <div class="demo-retro-sections">
+    <section class="demo-retro-panel demo-retro-unreachable-fields" data-section-number="2">
+      <input name="phone" aria-label="Phone" class="demo-retro-input demo-retro-unreachable" type="tel" disabled>
+      <input name="address" aria-label="Address" class="demo-retro-input demo-retro-unreachable" type="text" disabled>
+      <input name="language" aria-label="Language" class="demo-retro-input demo-retro-unreachable" type="text" disabled>
     </section>
 
-    <div class="demo-retro-stack">
-      <section class="demo-retro-panel">
-        <h4 class="demo-retro-title">Options</h4>
-        <div class="demo-retro-panel-body demo-retro-options">
-          <label><input name="remember_me" type="checkbox"> Keep me signed in</label>
-          <label><input name="updates" type="checkbox"> Send updates</label>
-          <label><input name="account_type" type="radio" value="personal"> Personal</label>
-          <label><input name="account_type" type="radio" value="work"> Work</label>
-        </div>
-      </section>
+    <section class="demo-retro-panel demo-retro-options" aria-label="Options" data-section-number="3">
+      <% 10.times do |index| %>
+        <input name="option_<%= index + 1 %>" aria-label="Option <%= index + 1 %>" type="checkbox">
+      <% end %>
+    </section>
 
-      <section class="demo-retro-panel">
-        <h4 class="demo-retro-title">Actions</h4>
-        <div class="demo-retro-panel-body demo-retro-actions">
-          <button type="button" disabled>Continue</button>
-          <button type="button" disabled>Save</button>
-          <button type="button" disabled>Cancel</button>
-        </div>
-      </section>
-
-      <section class="demo-retro-panel">
-        <h4 class="demo-retro-title">Search</h4>
-        <div class="demo-retro-panel-body">
-          <label for="bad-search">Search</label>
-          <input id="bad-search" name="search" class="demo-retro-input" type="search" value="Profile">
-        </div>
-      </section>
-    </div>
+    <section class="demo-retro-panel demo-retro-actions" aria-label="Actions" data-section-number="4">
+      <button type="button" disabled>Flibber</button>
+      <button type="button" disabled><img src="data:image/gif;base64,broken" alt="Save"></button>
+    </section>
   </div>
 </form>
