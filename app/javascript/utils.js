@@ -1,6 +1,18 @@
 const buttonWords = ["Save", "Cancel", "Continue", "Submit", "Retry", "Next", "Apply", "Done", "Button", "OK"]
 const randomString = () => Math.random().toString(36).substring(2, 4 + Math.floor(Math.random() * 9))
 
+window.showDesignQuality = (quality) => {
+  document.querySelectorAll(".design-quality-pane").forEach((pane) => {
+    pane.hidden = pane.dataset.designQualityPane !== quality
+  })
+
+  document.querySelectorAll("[data-design-quality]").forEach((button) => {
+    const selected = button.dataset.designQuality === quality
+    button.classList.toggle("active", selected)
+    button.setAttribute("aria-pressed", selected)
+  })
+}
+
 window.randomizeBadInput = (input) => {
   if (input.type === "checkbox") return input.checked = !input.checked
   if (input.type === "range") {

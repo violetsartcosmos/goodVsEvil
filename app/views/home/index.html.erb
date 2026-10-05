@@ -1,40 +1,29 @@
 <main class="container showcase-page pb-4 pb-lg-5">
   <div class="row g-4 g-xl-5 align-items-start">
-    <aside class="col-12 col-lg-4 col-xl-3">
-      <div class="showcase-intro mb-4">
-        <h1 class="display-5 fw-bold mb-3">Good design.<br><span class="showcase-gradient-text">Bad design.</span></h1>
-        <p class="text-body-secondary mb-0">Explore the little choices that make an experience feel effortless—or make you want to close the tab.</p>
-      </div>
-
-      <nav class="nav nav-pills flex-row flex-lg-column gap-2 showcase-category-nav" id="design-categories" role="tablist" aria-label="Design categories">
+    <aside class="col-12 col-lg-3">
+      <nav class="nav nav-pills flex-row flex-lg-column gap-2 showcase-category-nav" id="design-categories" role="tablist" aria-label="Categories">
         <button class="nav-link active" id="inputs-category-tab" data-bs-toggle="tab" data-bs-target="#inputs-category" type="button" role="tab" aria-controls="inputs-category" aria-selected="true">
-          <span class="showcase-category-icon" aria-hidden="true">01</span><span><strong>Inputs &amp; forms</strong><small>Make it easy to get things done</small></span>
+          <span class="showcase-category-icon" aria-hidden="true">01</span><strong>Inputs &amp; forms</strong>
         </button>
         <button class="nav-link" id="styling-category-tab" data-bs-toggle="tab" data-bs-target="#styling-category" type="button" role="tab" aria-controls="styling-category" aria-selected="false">
-          <span class="showcase-category-icon" aria-hidden="true">02</span><span><strong>Styling</strong><small>Give every element a purpose</small></span>
+          <span class="showcase-category-icon" aria-hidden="true">02</span><strong>Styling</strong>
         </button>
         <button class="nav-link" id="images-category-tab" data-bs-toggle="tab" data-bs-target="#images-category" type="button" role="tab" aria-controls="images-category" aria-selected="false">
-          <span class="showcase-category-icon" aria-hidden="true">03</span><span><strong>Images</strong><small>Make visuals feel at home</small></span>
+          <span class="showcase-category-icon" aria-hidden="true">03</span><strong>Images</strong>
         </button>
         <button class="nav-link" id="elements-category-tab" data-bs-toggle="tab" data-bs-target="#elements-category" type="button" role="tab" aria-controls="elements-category" aria-selected="false">
-          <span class="showcase-category-icon" aria-hidden="true">04</span><span><strong>Other elements</strong><small>Details that guide the way</small></span>
+          <span class="showcase-category-icon" aria-hidden="true">04</span><strong>Other elements</strong>
         </button>
       </nav>
-
     </aside>
 
-    <section class="col-12 col-lg-8 col-xl-9" aria-label="Design examples">
-      <div class="tab-content">
+    <section class="col-12 col-lg-9" aria-label="Examples">
+    <div class="tab-content">
         <section class="tab-pane fade show active" id="inputs-category" role="tabpanel" aria-labelledby="inputs-category-tab" tabindex="0">
+          <h1 class="display-6 fw-bold mb-4">Inputs &amp; forms</h1>
           <%= render "design_category",
             key: "inputs",
-            title: "Inputs & forms",
-            description: "A thoughtful form makes the next step obvious and keeps the effort small.",
-            good_title: "A profile that's easy to update",
-            good_description: "A complete profile form with clear groups, helpful guidance, and predictable controls.",
-            bad_title: "Inputs that misbehave",
             bad_description: "Typing scrambles the text, several fields are impossible to reach, and none of the actions respond.",
-            bad_design_partial: "input_form_bad_design",
             lesson: "Clear grouping, persistent labels, optional guidance, and a predictable save action make a detailed profile feel manageable." do %>
             <div class="profile-editor">
               <section class="profile-editor-hero rounded-4 mb-3">
@@ -57,12 +46,12 @@
 
               <div class="row g-3 mx-0">
                 <div class="col-12 col-xl-8">
-                  <section class="card profile-editor-card h-100">
-                    <div class="card-header bg-transparent px-3 px-md-4 pt-3">
+                  <section class="profile-editor-section h-100">
+                    <div class="px-3 px-md-4 pt-3">
                       <h4 class="h6 mb-1">Personal information</h4>
                       <p class="small text-body-secondary mb-0">Update the details people see on your profile.</p>
                     </div>
-                    <div class="card-body px-3 px-md-4">
+                    <div class="px-3 px-md-4 py-3">
                       <div class="mb-3">
                         <label for="profile-photo" class="form-label">Profile photo</label>
                         <div class="d-flex flex-wrap align-items-center gap-3">
@@ -130,7 +119,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between align-items-center gap-2 px-3 px-md-4 py-3">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 px-3 px-md-4 py-3">
                       <span class="small text-body-secondary">Changes are saved to your profile.</span>
                       <button type="button" class="btn btn-info fw-semibold px-4">Save changes</button>
                     </div>
@@ -139,41 +128,35 @@
 
                 <div class="col-12 col-xl-4">
                   <div class="d-grid gap-3">
-                    <section class="card profile-editor-card">
-                      <div class="card-body p-3">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                          <h4 class="h6 mb-0">Profile visibility</h4>
-                          <span class="badge rounded-pill text-bg-success">Public</span>
-                        </div>
-                        <p class="small text-body-secondary">Your name, photo, and about section can be seen by anyone.</p>
-                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" role="switch" id="profile-public" checked>
-                          <label class="form-check-label small" for="profile-public">Make profile public</label>
-                        </div>
+                    <section class="profile-editor-section p-3">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="h6 mb-0">Profile visibility</h4>
+                        <span class="badge rounded-pill text-bg-success">Public</span>
+                      </div>
+                      <p class="small text-body-secondary">Your name, photo, and about section can be seen by anyone.</p>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="profile-public" checked>
+                        <label class="form-check-label small" for="profile-public">Make profile public</label>
                       </div>
                     </section>
-                    <section class="card profile-editor-card">
-                      <div class="card-body p-3">
-                        <h4 class="h6 mb-1">Email preferences</h4>
-                        <p class="small text-body-secondary">Choose which updates arrive in your inbox.</p>
-                        <div class="form-check mb-2">
-                          <input class="form-check-input" type="checkbox" id="profile-product-updates" checked>
-                          <label class="form-check-label small" for="profile-product-updates">Product news and tips</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="profile-security-alerts" checked>
-                          <label class="form-check-label small" for="profile-security-alerts">Security alerts</label>
-                        </div>
+                    <section class="profile-editor-section p-3">
+                      <h4 class="h6 mb-1">Email preferences</h4>
+                      <p class="small text-body-secondary">Choose which updates arrive in your inbox.</p>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="profile-product-updates" checked>
+                        <label class="form-check-label small" for="profile-product-updates">Product news and tips</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="profile-security-alerts" checked>
+                        <label class="form-check-label small" for="profile-security-alerts">Security alerts</label>
                       </div>
                     </section>
-                    <section class="card profile-editor-card">
-                      <div class="card-body p-3">
-                        <h4 class="h6 mb-2">Profile strength</h4>
-                        <div class="progress mb-2" role="progressbar" aria-label="Profile completeness" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-info" style="width: 80%"></div>
-                        </div>
-                        <p class="small text-body-secondary mb-0">You’re off to a great start. Add a photo to complete your profile.</p>
+                    <section class="profile-editor-section p-3">
+                      <h4 class="h6 mb-2">Profile strength</h4>
+                      <div class="progress mb-2" role="progressbar" aria-label="Profile completeness" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-info" style="width: 80%"></div>
                       </div>
+                      <p class="small text-body-secondary mb-0">You’re off to a great start. Add a photo to complete your profile.</p>
                     </section>
                   </div>
                 </div>
@@ -183,18 +166,12 @@
         </section>
 
         <section class="tab-pane fade" id="styling-category" role="tabpanel" aria-labelledby="styling-category-tab" tabindex="0">
+          <h1 class="display-6 fw-bold mb-4">Styling</h1>
           <%= render "design_category",
             key: "styling",
-            title: "Styling",
-            description: "Visual hierarchy helps people understand what matters without thinking twice.",
-            good_title: "A calm, clear interface",
-            good_description: "Readable contrast, consistent spacing, and a focused action.",
-            bad_title: "A visual shouting match",
             bad_description: "Competing colors and competing actions make it hard to tell what matters.",
-            bad_design_partial: "styling_bad_design",
             lesson: "Consistent spacing, legible contrast, and a restrained palette make important actions easier to find." do %>
-            <div class="demo-style-good p-4 rounded-4">
-              <span class="badge rounded-pill text-bg-success mb-3">All caught up</span>
+            <div class="demo-style-good">
               <h3 class="h5 mb-2">Your workspace is ready</h3>
               <p class="text-body-secondary mb-4">Pick up where you left off. Your latest updates are right here.</p>
               <button type="button" class="btn btn-info fw-semibold me-2">Open workspace</button>
@@ -204,15 +181,10 @@
         </section>
 
         <section class="tab-pane fade" id="images-category" role="tabpanel" aria-labelledby="images-category-tab" tabindex="0">
+          <h1 class="display-6 fw-bold mb-4">Images</h1>
           <%= render "design_category",
             key: "images",
-            title: "Images",
-            description: "Images should support the story, load reliably, and fit the space they’re given.",
-            good_title: "A visual with room to breathe",
-            good_description: "A considered crop and a short caption give this artwork context.",
-            bad_title: "An image out of place",
             bad_description: "The crop and proportions make the image feel disconnected from its content.",
-            bad_design_partial: "images_bad_design",
             lesson: "Use a deliberate crop, descriptive alternative text, and a caption when the image needs context." do %>
             <div class="demo-art-good" role="img" aria-label="Abstract sunset over a layered purple and teal landscape"></div>
             <div class="d-flex justify-content-between align-items-start mt-3 gap-3">
@@ -226,15 +198,10 @@
         </section>
 
         <section class="tab-pane fade" id="elements-category" role="tabpanel" aria-labelledby="elements-category-tab" tabindex="0">
+          <h1 class="display-6 fw-bold mb-4">Other elements</h1>
           <%= render "design_category",
             key: "elements",
-            title: "Other design elements",
-            description: "Navigation, feedback, and small details help people feel oriented and in control.",
-            good_title: "Helpful feedback, right on time",
-            good_description: "The status is clear, the next step is nearby, and nothing interrupts the flow.",
-            bad_title: "Conflicting feedback",
             bad_description: "Warnings and status messages compete without making the next step clear.",
-            bad_design_partial: "elements_bad_design",
             lesson: "Give feedback close to the action, explain what happened, and make the next step easy to spot." do %>
             <div class="alert alert-success border-0 d-flex gap-3 align-items-start mb-3" role="status">
               <span class="showcase-feedback-icon" aria-hidden="true">✓</span>

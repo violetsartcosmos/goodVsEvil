@@ -1,18 +1,67 @@
-<div class="showcase-heading mb-4">
-  <span class="small text-uppercase fw-semibold text-info">Explore the difference</span>
-  <h2 class="display-6 fw-bold mt-2 mb-2"><%= title %></h2>
-  <p class="text-body-secondary mb-0"><%= description %></p>
-</div>
+<section class="showcase-demo-card rounded-4">
+  <div class="tab-content p-3 p-md-4">
+    <% ["good", "bad"].each do |quality| %>
+      <% example_id = "#{key}-#{quality}-example" %>
+      <% why_id = "#{key}-#{quality}-why" %>
+      <section class="design-quality-pane" data-design-quality-pane="<%= quality %>" <%= "hidden" if quality == "bad" %>>
+        <ul class="nav nav-tabs showcase-explanation-tabs" role="tablist" aria-label="<%= quality.capitalize %> design example and explanation">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="<%= example_id %>-tab" data-bs-toggle="tab" data-bs-target="#<%= example_id %>" type="button" role="tab" aria-controls="<%= example_id %>" aria-selected="true"><%= quality.capitalize %> Design</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="<%= why_id %>-tab" data-bs-toggle="tab" data-bs-target="#<%= why_id %>" type="button" role="tab" aria-controls="<%= why_id %>" aria-selected="false">Why?</button>
+          </li>
+        </ul>
 
-<% good_content = capture { yield } %>
+        <div class="tab-content showcase-explanation-content">
+          <div class="tab-pane fade show active" id="<%= example_id %>" role="tabpanel" aria-labelledby="<%= example_id %>-tab" tabindex="0">
+            <% if quality == "good" %>
+              <%= yield %>
+            <% elsif key == "inputs" %>
+              <%= render "input_form_bad_design" %>
+            <% elsif key == "styling" %>
+              <div class="demo-style-bad">
+                <p>*** URGENT IMPORTANT NOTICE ***</p>
+                <h3>CLICK THIS BUTTON RIGHT NOW</h3>
+                <button type="button">CLICK!!!</button>
+                <button type="button">NO WAIT CLICK THIS</button>
+                <p>everything is important so nothing is important</p>
+              </div>
+            <% elsif key == "images" %>
+              <div class="demo-art-bad" role="img" aria-label="Distorted abstract image with clashing colors and an awkward crop">
+                <div class="demo-art-bad-shape"></div>
+              </div>
+              <p class="small mt-2 mb-0">Image_final_FINAL2_new.jpg (maybe)</p>
+            <% else %>
+              <div class="demo-elements-bad">
+                <div>WARNING!!! ACTION NEEDED!!!</div>
+                <div>SUCCESS? ERROR? PLEASE WAIT?</div>
+                <div>CLICK HERE TO CONTINUE OR MAYBE NOT</div>
+              </div>
+            <% end %>
+          </div>
 
-<div class="card showcase-demo-card border-0 shadow-lg">
-  <div class="card-header showcase-demo-header d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 p-md-4">
-    <%= render "good_bad_toggle", key: key, title: title %>
+          <div class="tab-pane fade" id="<%= why_id %>" role="tabpanel" aria-labelledby="<%= why_id %>-tab" tabindex="0">
+            <% if quality == "good" %>
+              <p class="text-body-secondary mb-0"><%= lesson %></p>
+            <% elsif key == "inputs" %>
+              <ol class="demo-behavior-list">
+                <li>Several unrelated details compete for attention instead of guiding people through a clear sequence.</li>
+                <li>Controls that are difficult to see or target make the form frustrating to use.</li>
+                <li>Choices without meaningful labels leave people guessing what they are selecting.</li>
+                <li>Unclear actions and broken visual cues make it hard to know what will happen next.</li>
+                <li>Disabled actions block progress without explaining how to continue.</li>
+                <li>An unpredictable control takes away the user's sense of control.</li>
+                <li>An arbitrary answer requirement ignores what the question asks for.</li>
+                <li>Inconsistent labels and emphasis make the interface harder to scan.</li>
+                <li>A moving action prevents people from reliably reaching their goal.</li>
+              </ol>
+            <% else %>
+              <p class="text-body-secondary mb-0"><%= bad_description %></p>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    <% end %>
   </div>
-
-  <div class="tab-content">
-    <%= render "good_design", key: key, title: good_title, description: good_description, lesson: lesson, content: good_content %>
-    <%= render "bad_design", key: key, title: bad_title, description: bad_description, bad_design_partial: bad_design_partial %>
-  </div>
-</div>
+</section>
