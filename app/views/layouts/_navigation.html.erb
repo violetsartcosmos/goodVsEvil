@@ -1,0 +1,11 @@
+<header class="container site-header d-flex flex-wrap justify-content-between align-items-center gap-3 py-4">
+  <%= link_to root_path, class: "showcase-brand text-decoration-none" do %>
+    <span class="showcase-brand-mark" aria-hidden="true">G</span>
+    <span>Good <span class="text-info">Vs</span> Evil</span>
+  <% end %>
+
+  <nav class="nav nav-pills showcase-top-nav" aria-label="Main navigation">
+    <%= link_to "Good vs Bad", root_path, class: "nav-link#{' active' if current_page?(root_path)}", aria: { current: ("page" if current_page?(root_path)) } %>
+    <%= link_to "Users", users_path, class: "nav-link#{' active' if controller_name == 'users'}", aria: { current: ("page" if controller_name == 'users') } %>
+  </nav>
+</header>

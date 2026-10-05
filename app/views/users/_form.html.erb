@@ -24,7 +24,11 @@
       <div class="profile-banner-art"></div>
       <div class="card-body d-flex flex-wrap align-items-center gap-3 pt-0">
         <div class="profile-avatar" aria-hidden="true">
-          <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, alt: "" %>
+          <% else %>
+            <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+          <% end %>
         </div>
         <div class="pt-3">
           <h2 class="h4 mb-1"><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || "Your name here" %></h2>
@@ -78,6 +82,11 @@
               <div class="col-12">
                 <%= form.label :language, class: "form-label" %>
                 <%= form.text_field :language, class: "form-control", placeholder: "e.g. English" %>
+              </div>
+              <div class="col-12">
+                <%= form.label :avatar, "Profile photo", class: "form-label" %>
+                <%= form.file_field :avatar, class: "form-control", accept: "image/jpeg,image/png,image/webp" %>
+                <div class="form-text">Choose a JPEG, PNG, or WebP image under 5 MB.</div>
               </div>
             </div>
           </div>

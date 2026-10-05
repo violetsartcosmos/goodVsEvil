@@ -1,0 +1,119 @@
+<main class="container showcase-page pb-4 pb-lg-5">
+  <div class="row g-4 g-xl-5 align-items-start">
+    <aside class="col-12 col-lg-4 col-xl-3">
+      <div class="showcase-intro mb-4">
+        <h1 class="display-5 fw-bold mb-3">Good design.<br><span class="showcase-gradient-text">Bad design.</span></h1>
+        <p class="text-body-secondary mb-0">Explore the little choices that make an experience feel effortless—or make you want to close the tab.</p>
+      </div>
+
+      <nav class="nav nav-pills flex-row flex-lg-column gap-2 showcase-category-nav" id="design-categories" role="tablist" aria-label="Design categories">
+        <button class="nav-link active" id="inputs-category-tab" data-bs-toggle="tab" data-bs-target="#inputs-category" type="button" role="tab" aria-controls="inputs-category" aria-selected="true">
+          <span class="showcase-category-icon" aria-hidden="true">01</span><span><strong>Inputs &amp; forms</strong><small>Make it easy to get things done</small></span>
+        </button>
+        <button class="nav-link" id="styling-category-tab" data-bs-toggle="tab" data-bs-target="#styling-category" type="button" role="tab" aria-controls="styling-category" aria-selected="false">
+          <span class="showcase-category-icon" aria-hidden="true">02</span><span><strong>Styling</strong><small>Give every element a purpose</small></span>
+        </button>
+        <button class="nav-link" id="images-category-tab" data-bs-toggle="tab" data-bs-target="#images-category" type="button" role="tab" aria-controls="images-category" aria-selected="false">
+          <span class="showcase-category-icon" aria-hidden="true">03</span><span><strong>Images</strong><small>Make visuals feel at home</small></span>
+        </button>
+        <button class="nav-link" id="elements-category-tab" data-bs-toggle="tab" data-bs-target="#elements-category" type="button" role="tab" aria-controls="elements-category" aria-selected="false">
+          <span class="showcase-category-icon" aria-hidden="true">04</span><span><strong>Other elements</strong><small>Details that guide the way</small></span>
+        </button>
+      </nav>
+
+    </aside>
+
+    <section class="col-12 col-lg-8 col-xl-9" aria-label="Design examples">
+      <div class="tab-content">
+        <section class="tab-pane fade show active" id="inputs-category" role="tabpanel" aria-labelledby="inputs-category-tab" tabindex="0">
+          <%= render "category_showcase",
+            key: "inputs",
+            title: "Inputs & forms",
+            description: "A thoughtful form makes the next step obvious and keeps the effort small.",
+            good_title: "A form that feels easy",
+            good_description: "Clear labels, helpful context, easy-to-target checkbox, and one obvious next step.",
+            bad_title: "A form that fights back",
+            bad_description: "Unclear controls and a checkbox you have to click with pixel precision.",
+            lesson: "Persistent labels and a clear primary action help people understand what to do—even after they start typing." do %>
+            <div class="demo-good-form">
+              <label for="good-email" class="form-label">Email address</label>
+              <input id="good-email" class="form-control mb-2" type="email" placeholder="you@example.com" autocomplete="email">
+              <div class="form-text mb-3">We’ll only use this to send your sign-in link.</div>
+              <h4 class="h6">Checkbox target size</h4>
+              <label class="form-check demo-checkbox-good mb-3" for="good-remember">
+                <input id="good-remember" class="form-check-input" type="checkbox">
+                <span class="form-check-label">Keep me signed in</span>
+              </label>
+              <button type="button" class="btn btn-info fw-semibold">Send me a link</button>
+            </div>
+          <% end %>
+        </section>
+
+        <section class="tab-pane fade" id="styling-category" role="tabpanel" aria-labelledby="styling-category-tab" tabindex="0">
+          <%= render "category_showcase",
+            key: "styling",
+            title: "Styling",
+            description: "Visual hierarchy helps people understand what matters without thinking twice.",
+            good_title: "A calm, clear interface",
+            good_description: "Readable contrast, consistent spacing, and a focused action.",
+            bad_title: "A visual shouting match",
+            bad_description: "Everything is urgent, every color is competing, and nothing can be read.",
+            lesson: "Consistent spacing, legible contrast, and a restrained palette make important actions easier to find." do %>
+            <div class="demo-style-good p-4 rounded-4">
+              <span class="badge rounded-pill text-bg-success mb-3">All caught up</span>
+              <h3 class="h5 mb-2">Your workspace is ready</h3>
+              <p class="text-body-secondary mb-4">Pick up where you left off. Your latest updates are right here.</p>
+              <button type="button" class="btn btn-info fw-semibold me-2">Open workspace</button>
+              <button type="button" class="btn btn-outline-light">Not now</button>
+            </div>
+          <% end %>
+        </section>
+
+        <section class="tab-pane fade" id="images-category" role="tabpanel" aria-labelledby="images-category-tab" tabindex="0">
+          <%= render "category_showcase",
+            key: "images",
+            title: "Images",
+            description: "Images should support the story, load reliably, and fit the space they’re given.",
+            good_title: "A visual with room to breathe",
+            good_description: "A considered crop and a short caption give this artwork context.",
+            bad_title: "An image out of place",
+            bad_description: "The visual is stretched, cropped awkwardly, and disconnected from its content.",
+            lesson: "Use a deliberate crop, descriptive alternative text, and a caption when the image needs context." do %>
+            <div class="demo-art-good" role="img" aria-label="Abstract sunset over a layered purple and teal landscape"></div>
+            <div class="d-flex justify-content-between align-items-start mt-3 gap-3">
+              <div>
+                <h3 class="h6 mb-1">A softer kind of sunset</h3>
+                <p class="small text-body-secondary mb-0">Abstract landscape · 3 min read</p>
+              </div>
+              <span class="badge rounded-pill text-bg-info">Featured</span>
+            </div>
+          <% end %>
+        </section>
+
+        <section class="tab-pane fade" id="elements-category" role="tabpanel" aria-labelledby="elements-category-tab" tabindex="0">
+          <%= render "category_showcase",
+            key: "elements",
+            title: "Other design elements",
+            description: "Navigation, feedback, and small details help people feel oriented and in control.",
+            good_title: "Helpful feedback, right on time",
+            good_description: "The status is clear, the next step is nearby, and nothing interrupts the flow.",
+            bad_title: "A wall of confusing warnings",
+            bad_description: "Repeated alerts and unclear actions leave people less certain than before.",
+            lesson: "Give feedback close to the action, explain what happened, and make the next step easy to spot." do %>
+            <div class="alert alert-success border-0 d-flex gap-3 align-items-start mb-3" role="status">
+              <span class="showcase-feedback-icon" aria-hidden="true">✓</span>
+              <div>
+                <h3 class="h6 alert-heading mb-1">Changes saved</h3>
+                <p class="small mb-0">Your profile is up to date. You can keep exploring.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <button type="button" class="btn btn-info fw-semibold">Continue</button>
+              <span class="small text-body-secondary">You’re all set.</span>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>

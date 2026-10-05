@@ -7,7 +7,11 @@
     <div class="profile-hero-art"></div>
     <div class="card-body position-relative pt-0 pb-4">
       <div class="profile-avatar profile-avatar-lg mx-auto" aria-hidden="true">
-        <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, alt: "" %>
+        <% else %>
+          <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
+        <% end %>
       </div>
       <h1 class="h2 fw-bold mt-3 mb-1"><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || @user.username %></h1>
       <p class="text-body-secondary mb-3">@<%= @user.username %></p>
