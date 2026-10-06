@@ -1,18 +1,18 @@
 <main class="container showcase-page pb-4 pb-lg-5">
   <div class="row g-4 g-xl-5 align-items-start">
     <aside class="col-12 col-lg-3">
-      <nav class="nav nav-pills flex-row flex-lg-column gap-2 showcase-category-nav" id="design-categories" role="tablist" aria-label="Categories">
-        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3 active" id="inputs-category-tab" data-bs-toggle="tab" data-bs-target="#inputs-category" type="button" role="tab" aria-controls="inputs-category" aria-selected="true">
-          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center" aria-hidden="true">01</span><strong>Inputs &amp; forms</strong>
+      <nav class="nav nav-pills flex-column flex-sm-row flex-lg-column gap-2 showcase-category-nav" id="design-categories" role="tablist" aria-label="Categories">
+        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3 text-start active" id="inputs-category-tab" data-bs-toggle="tab" data-bs-target="#inputs-category" type="button" role="tab" aria-controls="inputs-category" aria-selected="true">
+          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center border border-light border-opacity-10 rounded-4" aria-hidden="true">01</span><strong>Inputs &amp; forms</strong>
         </button>
-        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3" id="styling-category-tab" data-bs-toggle="tab" data-bs-target="#styling-category" type="button" role="tab" aria-controls="styling-category" aria-selected="false">
-          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center" aria-hidden="true">02</span><strong>Styling</strong>
+        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3 text-start" id="styling-category-tab" data-bs-toggle="tab" data-bs-target="#styling-category" type="button" role="tab" aria-controls="styling-category" aria-selected="false">
+          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center border border-light border-opacity-10 rounded-4" aria-hidden="true">02</span><strong>Styling</strong>
         </button>
-        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3" id="images-category-tab" data-bs-toggle="tab" data-bs-target="#images-category" type="button" role="tab" aria-controls="images-category" aria-selected="false">
-          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center" aria-hidden="true">03</span><strong>Images</strong>
+        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3 text-start" id="images-category-tab" data-bs-toggle="tab" data-bs-target="#images-category" type="button" role="tab" aria-controls="images-category" aria-selected="false">
+          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center border border-light border-opacity-10 rounded-4" aria-hidden="true">03</span><strong>Images</strong>
         </button>
-        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3" id="elements-category-tab" data-bs-toggle="tab" data-bs-target="#elements-category" type="button" role="tab" aria-controls="elements-category" aria-selected="false">
-          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center" aria-hidden="true">04</span><strong>Other elements</strong>
+        <button class="nav-link d-flex flex-grow-1 align-items-center gap-3 text-start" id="elements-category-tab" data-bs-toggle="tab" data-bs-target="#elements-category" type="button" role="tab" aria-controls="elements-category" aria-selected="false">
+          <span class="showcase-category-icon d-grid flex-shrink-0 align-items-center justify-content-center border border-light border-opacity-10 rounded-4" aria-hidden="true">04</span><strong>Other elements</strong>
         </button>
       </nav>
     </aside>
@@ -26,10 +26,10 @@
             bad_description: "Typing scrambles the text, several fields are impossible to reach, and none of the actions respond.",
             lesson: "Clear grouping, persistent labels, optional guidance, and a predictable save action make a detailed profile feel manageable." do %>
             <div class="profile-editor">
-              <section class="profile-editor-hero rounded-4 mb-3">
-                <div class="profile-editor-cover"></div>
-                <div class="profile-editor-identity d-flex flex-wrap align-items-end gap-3 px-3 px-md-4">
-                  <div class="profile-editor-avatar" aria-hidden="true">JM</div>
+              <section class="profile-editor-hero bg-black border border-light border-opacity-10 rounded-4 mb-3">
+                <div class="profile-editor-cover rounded-top-4"></div>
+                <div class="profile-editor-identity d-flex flex-wrap align-items-end gap-3 px-3 px-md-4 pb-3">
+                  <div class="profile-editor-avatar d-flex flex-shrink-0 align-items-center justify-content-center border border-4 border-black rounded-circle" aria-hidden="true">JM</div>
                   <div class="flex-grow-1 pb-1">
                     <h3 class="h5 mb-1">Jordan Morgan</h3>
                     <p class="small text-body-secondary mb-0">@jordanm · Member since 2023</p>
@@ -38,7 +38,7 @@
                 </div>
               </section>
 
-              <nav class="nav nav-underline profile-editor-nav mb-3" aria-label="Profile settings">
+              <nav class="nav nav-underline profile-editor-nav border-bottom border-light border-opacity-10 mb-3" aria-label="Profile settings">
                 <span class="nav-link active">Personal information</span>
                 <span class="nav-link">Account</span>
                 <span class="nav-link">Privacy</span>
@@ -46,16 +46,16 @@
 
               <div class="row g-3 mx-0">
                 <div class="col-12 col-xl-8">
-                  <section class="profile-editor-section h-100">
+                  <section class="profile-editor-section border-bottom border-light border-opacity-10 h-100">
                     <div class="px-3 px-md-4 pt-3">
                       <h4 class="h6 mb-1">Personal information</h4>
                       <p class="small text-body-secondary mb-0">Update the details people see on your profile.</p>
                     </div>
                     <div class="px-3 px-md-4 py-3">
                       <div class="mb-3">
-                        <label for="profile-photo" class="form-label">Profile photo</label>
+                        <label for="profile-photo" class="form-label small fw-semibold mb-1">Profile photo</label>
                         <div class="d-flex flex-wrap align-items-center gap-3">
-                          <div class="profile-editor-avatar profile-editor-avatar-small" aria-hidden="true">JM</div>
+                          <div class="profile-editor-avatar profile-editor-avatar-small d-flex flex-shrink-0 align-items-center justify-content-center border border-4 border-black rounded-circle mt-0" aria-hidden="true">JM</div>
                           <div>
                             <input id="profile-photo" class="form-control form-control-sm" type="file" accept="image/*">
                             <div class="form-text">Use a clear photo so people can recognize you.</div>
@@ -65,15 +65,15 @@
 
                       <div class="row g-3">
                         <div class="col-12 col-md-6">
-                          <label for="profile-first-name" class="form-label">First name</label>
+                          <label for="profile-first-name" class="form-label small fw-semibold mb-1">First name</label>
                           <input id="profile-first-name" class="form-control" type="text" value="Jordan" autocomplete="given-name">
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-last-name" class="form-label">Last name</label>
+                          <label for="profile-last-name" class="form-label small fw-semibold mb-1">Last name</label>
                           <input id="profile-last-name" class="form-control" type="text" value="Morgan" autocomplete="family-name">
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-username" class="form-label">Username</label>
+                          <label for="profile-username" class="form-label small fw-semibold mb-1">Username</label>
                           <div class="input-group">
                             <span class="input-group-text">@</span>
                             <input id="profile-username" class="form-control" type="text" value="jordanm" autocomplete="username">
@@ -81,12 +81,12 @@
                           <div class="form-text">Your profile link is goodvsevil.example/@jordanm</div>
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-email" class="form-label">Email address</label>
+                          <label for="profile-email" class="form-label small fw-semibold mb-1">Email address</label>
                           <input id="profile-email" class="form-control" type="email" value="jordan@example.com" autocomplete="email">
                           <div class="form-text">Used for account updates and sign-in.</div>
                         </div>
                         <div class="col-12">
-                          <label for="profile-bio" class="form-label">About</label>
+                          <label for="profile-bio" class="form-label small fw-semibold mb-1">About</label>
                           <textarea id="profile-bio" class="form-control" rows="3" maxlength="240">Designer, curious maker, and collector of little ideas.</textarea>
                           <div class="d-flex justify-content-between form-text">
                             <span>A short introduction helps people get to know you.</span>
@@ -94,15 +94,15 @@
                           </div>
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-location" class="form-label">Location <span class="text-body-secondary fw-normal">(optional)</span></label>
+                          <label for="profile-location" class="form-label small fw-semibold mb-1">Location <span class="text-body-secondary fw-normal">(optional)</span></label>
                           <input id="profile-location" class="form-control" type="text" value="Portland, Oregon" autocomplete="address-level2">
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-website" class="form-label">Website <span class="text-body-secondary fw-normal">(optional)</span></label>
+                          <label for="profile-website" class="form-label small fw-semibold mb-1">Website <span class="text-body-secondary fw-normal">(optional)</span></label>
                           <input id="profile-website" class="form-control" type="url" placeholder="https://example.com" value="https://jordanm.example">
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-language" class="form-label">Language</label>
+                          <label for="profile-language" class="form-label small fw-semibold mb-1">Language</label>
                           <select id="profile-language" class="form-select">
                             <option selected>English (United States)</option>
                             <option>Español</option>
@@ -110,7 +110,7 @@
                           </select>
                         </div>
                         <div class="col-12 col-md-6">
-                          <label for="profile-timezone" class="form-label">Time zone</label>
+                          <label for="profile-timezone" class="form-label small fw-semibold mb-1">Time zone</label>
                           <select id="profile-timezone" class="form-select">
                             <option selected>Pacific Time (US &amp; Canada)</option>
                             <option>Mountain Time (US &amp; Canada)</option>
@@ -128,7 +128,7 @@
 
                 <div class="col-12 col-xl-4">
                   <div class="d-grid gap-3">
-                    <section class="profile-editor-section p-3">
+                    <section class="profile-editor-section border-bottom border-light border-opacity-10 p-3">
                       <div class="d-flex justify-content-between align-items-center mb-2">
                         <h4 class="h6 mb-0">Profile visibility</h4>
                         <span class="badge rounded-pill text-bg-success">Public</span>
@@ -139,7 +139,7 @@
                         <label class="form-check-label small" for="profile-public">Make profile public</label>
                       </div>
                     </section>
-                    <section class="profile-editor-section p-3">
+                    <section class="profile-editor-section border-bottom border-light border-opacity-10 p-3">
                       <h4 class="h6 mb-1">Email preferences</h4>
                       <p class="small text-body-secondary">Choose which updates arrive in your inbox.</p>
                       <div class="form-check mb-2">
@@ -151,9 +151,9 @@
                         <label class="form-check-label small" for="profile-security-alerts">Security alerts</label>
                       </div>
                     </section>
-                    <section class="profile-editor-section p-3">
+                    <section class="profile-editor-section border-0 p-3">
                       <h4 class="h6 mb-2">Profile strength</h4>
-                      <div class="progress mb-2" role="progressbar" aria-label="Profile completeness" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                      <div class="progress bg-white bg-opacity-10 mb-2" role="progressbar" aria-label="Profile completeness" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-info" style="width: 80%"></div>
                       </div>
                       <p class="small text-body-secondary mb-0">You’re off to a great start. Add a photo to complete your profile.</p>
@@ -171,7 +171,7 @@
             key: "styling",
             bad_description: "Competing colors and competing actions make it hard to tell what matters.",
             lesson: "Consistent spacing, legible contrast, and a restrained palette make important actions easier to find." do %>
-            <div class="demo-style-good">
+            <div class="demo-style-good py-2">
               <h3 class="h5 mb-2">Your workspace is ready</h3>
               <p class="text-body-secondary mb-4">Pick up where you left off. Your latest updates are right here.</p>
               <button type="button" class="btn btn-info fw-semibold me-2">Open workspace</button>
@@ -186,7 +186,7 @@
             key: "images",
             bad_description: "The crop and proportions make the image feel disconnected from its content.",
             lesson: "Use a deliberate crop, descriptive alternative text, and a caption when the image needs context." do %>
-            <div class="demo-art-good" role="img" aria-label="Abstract sunset over a layered purple and teal landscape"></div>
+            <div class="demo-art-good overflow-hidden rounded-4" role="img" aria-label="Abstract sunset over a layered purple and teal landscape"></div>
             <div class="d-flex justify-content-between align-items-start mt-3 gap-3">
               <div>
                 <h3 class="h6 mb-1">A softer kind of sunset</h3>
@@ -204,7 +204,7 @@
             bad_description: "Warnings and status messages compete without making the next step clear.",
             lesson: "Give feedback close to the action, explain what happened, and make the next step easy to spot." do %>
             <div class="alert alert-success border-0 d-flex gap-3 align-items-start mb-3" role="status">
-              <span class="showcase-feedback-icon" aria-hidden="true">✓</span>
+              <span class="showcase-feedback-icon d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-success bg-opacity-25 fw-bold" aria-hidden="true">✓</span>
               <div>
                 <h3 class="h6 alert-heading mb-1">Changes saved</h3>
                 <p class="small mb-0">Your profile is up to date. You can keep exploring.</p>

@@ -20,12 +20,12 @@
       </div>
     <% end %>
 
-    <div class="profile-banner card border-0 shadow-lg mb-4">
-      <div class="profile-banner-art"></div>
+    <div class="profile-banner card bg-black border-0 shadow-lg mb-4">
+      <div class="profile-banner-art rounded-top"></div>
       <div class="card-body d-flex flex-wrap align-items-center gap-3 pt-0">
-        <div class="profile-avatar" aria-hidden="true">
+        <div class="profile-avatar d-flex align-items-center justify-content-center border border-4 border-black rounded-circle" aria-hidden="true">
           <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar, alt: "" %>
+            <%= image_tag @user.avatar, alt: "", class: "w-100 h-100 rounded-circle" %>
           <% else %>
             <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
           <% end %>
@@ -39,7 +39,7 @@
 
     <div class="row g-4">
       <div class="col-12 col-lg-6">
-        <section class="card profile-card border-0 shadow-lg h-100">
+        <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg h-100">
           <div class="card-body p-4">
             <h2 class="h5 mb-1">Personal information</h2>
             <p class="small text-body-secondary mb-4">How should we know you?</p>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="col-12 col-lg-6">
-        <section class="card profile-card border-0 shadow-lg h-100">
+        <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg h-100">
           <div class="card-body p-4">
             <h2 class="h5 mb-1">Contact &amp; details</h2>
             <p class="small text-body-secondary mb-4">The little things that help you feel at home.</p>

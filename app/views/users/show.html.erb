@@ -3,12 +3,12 @@
     <%= link_to "Back to users", users_path, class: "btn btn-outline-light" %>
   </div>
 
-  <section class="profile-hero card border-0 shadow-lg mb-4 text-center">
-    <div class="profile-hero-art"></div>
+  <section class="profile-hero card bg-black border-0 shadow-lg mb-4 text-center">
+    <div class="profile-hero-art rounded-top"></div>
     <div class="card-body position-relative pt-0 pb-4">
-      <div class="profile-avatar profile-avatar-lg mx-auto" aria-hidden="true">
+      <div class="profile-avatar profile-avatar-lg d-flex align-items-center justify-content-center border border-4 border-black rounded-circle mx-auto" aria-hidden="true">
         <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar, alt: "" %>
+          <%= image_tag @user.avatar, alt: "", class: "w-100 h-100 rounded-circle" %>
         <% else %>
           <%= [@user.first_name, @user.last_name].compact_blank.map(&:first).join.presence || @user.username&.first&.upcase || "U" %>
         <% end %>
@@ -21,55 +21,55 @@
 
   <div class="row g-4">
     <div class="col-12 col-lg-7">
-      <section class="card profile-card border-0 shadow-lg h-100">
+      <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg h-100">
         <div class="card-header bg-transparent border-0 px-4 pt-4">
           <h2 class="h5 mb-1">Personal details</h2>
           <p class="small text-body-secondary mb-0">A little bit about you</p>
         </div>
         <div class="card-body px-4 pb-4">
           <dl class="profile-details mb-0">
-            <div><dt>Full name</dt><dd><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || "Not added yet" %></dd></div>
-            <div><dt>Email address</dt><dd><%= @user.email %></dd></div>
-            <div><dt>Phone number</dt><dd><%= @user.phone.presence || "Not added yet" %></dd></div>
-            <div><dt>Address</dt><dd><%= @user.address.presence || "Not added yet" %></dd></div>
-            <div><dt>Language</dt><dd><%= @user.language.presence || "Not added yet" %></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Full name</dt><dd class="col-12 col-sm-8 mb-0"><%= [@user.first_name, @user.last_name].compact_blank.join(" ").presence || "Not added yet" %></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Email address</dt><dd class="col-12 col-sm-8 mb-0"><%= @user.email %></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Phone number</dt><dd class="col-12 col-sm-8 mb-0"><%= @user.phone.presence || "Not added yet" %></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Address</dt><dd class="col-12 col-sm-8 mb-0"><%= @user.address.presence || "Not added yet" %></dd></div>
+            <div class="row g-0 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Language</dt><dd class="col-12 col-sm-8 mb-0"><%= @user.language.presence || "Not added yet" %></dd></div>
           </dl>
         </div>
       </section>
     </div>
 
     <div class="col-12 col-lg-5">
-      <section class="card profile-card border-0 shadow-lg h-100">
+      <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg h-100">
         <div class="card-header bg-transparent border-0 px-4 pt-4">
           <h2 class="h5 mb-1">Account details</h2>
           <p class="small text-body-secondary mb-0">Your account at a glance</p>
         </div>
         <div class="card-body px-4 pb-4">
           <dl class="profile-details mb-0">
-            <div><dt>Username</dt><dd><%= @user.username %></dd></div>
-            <div><dt>Member since</dt><dd><%= l(@user.created_at, format: :long) %></dd></div>
-            <div><dt>Profile status</dt><dd><span class="badge rounded-pill text-bg-success">Looking good</span></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Username</dt><dd class="col-12 col-sm-8 mb-0"><%= @user.username %></dd></div>
+            <div class="row g-0 border-bottom border-light border-opacity-10 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Member since</dt><dd class="col-12 col-sm-8 mb-0"><%= l(@user.created_at, format: :long) %></dd></div>
+            <div class="row g-0 py-3"><dt class="col-12 col-sm-4 text-body-secondary fw-normal">Profile status</dt><dd class="col-12 col-sm-8 mb-0"><span class="badge rounded-pill text-bg-success">Looking good</span></dd></div>
           </dl>
         </div>
       </section>
     </div>
 
     <div class="col-12">
-      <section class="card profile-card border-0 shadow-lg">
+      <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg">
         <div class="card-header bg-transparent border-0 px-4 pt-4">
           <h2 class="h5 mb-1">Activity</h2>
           <p class="small text-body-secondary mb-0">A quiet little timeline of your account</p>
         </div>
         <div class="card-body px-4 pb-4">
-          <div class="profile-activity">
-            <div class="profile-activity-dot"></div>
+          <div class="profile-activity d-flex position-relative gap-3 pt-2 pb-4">
+            <div class="profile-activity-dot z-1 flex-shrink-0 rounded-circle mt-1"></div>
             <div>
               <h3 class="h6 mb-1">You joined Good Vs Evil</h3>
               <p class="small text-body-secondary mb-0">Account created <%= l(@user.created_at, format: :long) %></p>
             </div>
           </div>
-          <div class="profile-activity">
-            <div class="profile-activity-dot"></div>
+          <div class="profile-activity d-flex position-relative gap-3 pt-2 pb-4">
+            <div class="profile-activity-dot z-1 flex-shrink-0 rounded-circle mt-1"></div>
             <div>
               <h3 class="h6 mb-1">Profile details updated</h3>
               <p class="small text-body-secondary mb-0">Last updated <%= l(@user.updated_at, format: :long) %></p>

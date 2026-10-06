@@ -1,4 +1,4 @@
-<section class="showcase-demo-card rounded-4">
+<section class="showcase-demo-card bg-black overflow-hidden rounded-4">
   <div class="tab-content p-3 p-md-4">
     <% ["good", "bad"].each do |quality| %>
       <% example_id = "#{key}-#{quality}-example" %>
@@ -13,30 +13,30 @@
           </li>
         </ul>
 
-        <div class="tab-content showcase-explanation-content">
+        <div class="tab-content showcase-explanation-content pt-3">
           <div class="tab-pane fade show active" id="<%= example_id %>" role="tabpanel" aria-labelledby="<%= example_id %>-tab" tabindex="0">
             <% if quality == "good" %>
               <%= yield %>
             <% elsif key == "inputs" %>
               <%= render "input_form_bad_design" %>
             <% elsif key == "styling" %>
-              <div class="demo-style-bad">
+              <div class="demo-style-bad overflow-hidden text-center">
                 <p>*** URGENT IMPORTANT NOTICE ***</p>
                 <h3>CLICK THIS BUTTON RIGHT NOW</h3>
-                <button type="button">CLICK!!!</button>
-                <button type="button">NO WAIT CLICK THIS</button>
-                <p>everything is important so nothing is important</p>
+                <button class="bg-danger text-white" type="button">CLICK!!!</button>
+                <button class="ms-1 bg-danger text-white" type="button">NO WAIT CLICK THIS</button>
+                <p class="mt-3 mb-0">everything is important so nothing is important</p>
               </div>
             <% elsif key == "images" %>
-              <div class="demo-art-bad" role="img" aria-label="Distorted abstract image with clashing colors and an awkward crop">
+              <div class="demo-art-bad d-flex align-items-center justify-content-center overflow-hidden" role="img" aria-label="Distorted abstract image with clashing colors and an awkward crop">
                 <div class="demo-art-bad-shape"></div>
               </div>
               <p class="small mt-2 mb-0">Image_final_FINAL2_new.jpg (maybe)</p>
             <% else %>
-              <div class="demo-elements-bad">
-                <div>WARNING!!! ACTION NEEDED!!!</div>
-                <div>SUCCESS? ERROR? PLEASE WAIT?</div>
-                <div>CLICK HERE TO CONTINUE OR MAYBE NOT</div>
+              <div class="demo-elements-bad d-grid gap-2 text-center">
+                <div class="p-2">WARNING!!! ACTION NEEDED!!!</div>
+                <div class="py-3 px-1">SUCCESS? ERROR? PLEASE WAIT?</div>
+                <div class="p-1">CLICK HERE TO CONTINUE OR MAYBE NOT</div>
               </div>
             <% end %>
           </div>
@@ -45,16 +45,16 @@
             <% if quality == "good" %>
               <p class="text-body-secondary mb-0"><%= lesson %></p>
             <% elsif key == "inputs" %>
-              <ol class="demo-behavior-list">
-                <li>Several unrelated details compete for attention instead of guiding people through a clear sequence.</li>
-                <li>Controls that are difficult to see or target make the form frustrating to use.</li>
-                <li>Choices without meaningful labels leave people guessing what they are selecting.</li>
-                <li>Unclear actions and broken visual cues make it hard to know what will happen next.</li>
-                <li>Disabled actions block progress without explaining how to continue.</li>
-                <li>An unpredictable control takes away the user's sense of control.</li>
-                <li>An arbitrary answer requirement ignores what the question asks for.</li>
-                <li>Inconsistent labels and emphasis make the interface harder to scan.</li>
-                <li>A moving action prevents people from reliably reaching their goal.</li>
+              <ol class="demo-behavior-list d-grid gap-3 m-0 ps-4">
+                <li class="ps-1 text-body-secondary small">Several unrelated details compete for attention instead of guiding people through a clear sequence.</li>
+                <li class="ps-1 text-body-secondary small">Controls that are difficult to see or target make the form frustrating to use.</li>
+                <li class="ps-1 text-body-secondary small">Choices without meaningful labels leave people guessing what they are selecting.</li>
+                <li class="ps-1 text-body-secondary small">Unclear actions and broken visual cues make it hard to know what will happen next.</li>
+                <li class="ps-1 text-body-secondary small">Disabled actions block progress without explaining how to continue.</li>
+                <li class="ps-1 text-body-secondary small">An unpredictable control takes away the user's sense of control.</li>
+                <li class="ps-1 text-body-secondary small">An arbitrary answer requirement ignores what the question asks for.</li>
+                <li class="ps-1 text-body-secondary small">Inconsistent labels and emphasis make the interface harder to scan.</li>
+                <li class="ps-1 text-body-secondary small">A moving action prevents people from reliably reaching their goal.</li>
               </ol>
             <% else %>
               <p class="text-body-secondary mb-0"><%= bad_description %></p>
