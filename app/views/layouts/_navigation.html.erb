@@ -1,16 +1,16 @@
 <header class="container site-header d-flex flex-wrap justify-content-between align-items-center gap-3 py-4">
-  <%= link_to root_path, class: "showcase-brand text-decoration-none" do %>
-    <span class="showcase-brand-mark" aria-hidden="true">G</span>
+  <%= link_to root_path, class: "showcase-brand d-inline-flex align-items-center gap-2 text-decoration-none text-white fw-bold fs-5" do %>
+    <span class="showcase-brand-mark d-grid align-items-center justify-content-center rounded-4 text-dark fw-bold" style="width: 2.4rem; height: 2.4rem;" aria-hidden="true">G</span>
     <span>Good <span class="text-info">Vs</span> Evil</span>
   <% end %>
 
-  <nav class="nav nav-pills showcase-top-nav align-items-center" aria-label="Main navigation">
+  <nav class="nav nav-pills showcase-top-nav align-items-center gap-2 border border-light border-opacity-10 rounded-pill p-1" aria-label="Main navigation">
     <% if controller_name == "home" %>
       <div class="nav-item d-flex" role="group" aria-label="Choose design quality">
-        <button id="good-quality-toggle" class="nav-link showcase-good-tab active" type="button" data-design-quality="good" aria-pressed="true" onclick="showDesignQuality('good')">Good</button>
-        <button id="bad-quality-toggle" class="nav-link showcase-bad-tab" type="button" data-design-quality="bad" aria-pressed="false" onclick="showDesignQuality('bad')">Bad</button>
+        <button id="good-quality-toggle" class="nav-link showcase-good-tab active px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="good" aria-pressed="true" onclick="showDesignQuality('good')">Good</button>
+        <button id="bad-quality-toggle" class="nav-link showcase-bad-tab px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="bad" aria-pressed="false" onclick="showDesignQuality('bad')">Bad</button>
       </div>
     <% end %>
-    <%= link_to "Users", users_path, class: "nav-link#{' active' if controller_name == 'users'}", aria: { current: ("page" if controller_name == 'users') } %>
+    <%= link_to "Users", users_path, class: "nav-link px-3 py-2 rounded-pill#{' active' if controller_name == 'users'}", aria: { current: ("page" if controller_name == 'users') } %>
   </nav>
 </header>

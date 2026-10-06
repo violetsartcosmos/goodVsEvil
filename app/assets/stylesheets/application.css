@@ -137,40 +137,21 @@ body {
   max-width: 1440px;
 }
 
-.showcase-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: var(--bs-body-color);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
 .showcase-brand-mark {
-  display: grid;
-  width: 2.4rem;
-  height: 2.4rem;
-  place-items: center;
-  border-radius: 0.8rem;
   background: linear-gradient(145deg, #8b7bff, #37cdb8);
   color: #101116;
 }
 
 .showcase-top-nav {
-  gap: 0.25rem;
-  padding: 0.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
   background: rgba(255, 255, 255, 0.025);
 }
 
 .showcase-top-nav .nav-link {
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
   color: var(--bs-secondary-color);
 }
 
-.showcase-top-nav .nav-link.active {
+.showcase-top-nav .nav-link.active,
+.showcase-top-nav .showcase-good-tab.active {
   background-color: rgba(85, 216, 190, 0.13);
   color: #70e3ce;
   font-weight: 600;
@@ -182,10 +163,7 @@ body {
 }
 
 .showcase-category-nav .nav-link {
-  display: flex;
-  flex: 1 1 10rem;
-  align-items: center;
-  gap: 0.85rem;
+  flex-basis: 10rem;
   min-width: 10rem;
   padding: 0.85rem;
   border: 1px solid transparent;
@@ -201,11 +179,8 @@ body {
 }
 
 .showcase-category-icon {
-  display: grid;
-  flex: 0 0 2.4rem;
   width: 2.4rem;
   height: 2.4rem;
-  place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.8rem;
   color: #74e0cb;
@@ -522,7 +497,6 @@ body {
 
 .demo-retro-kit {
   overflow: visible;
-  padding: 0.35rem;
   background: #c0c0c0;
   color: #242720;
   color-scheme: light;
@@ -530,16 +504,7 @@ body {
   font-size: 0.72rem;
 }
 
-.demo-retro-sections {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.55rem;
-  align-items: start;
-}
-
 .demo-retro-panel {
-  position: relative;
   min-width: 0;
   border: 1px solid #85877f;
   background: transparent;
@@ -555,56 +520,22 @@ body {
   font: inherit;
 }
 
-.demo-retro-panel[data-section-number] {
-  padding-left: 1.4rem;
-}
-
 .demo-retro-main-fields {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
   width: max-content;
   min-width: max-content;
   overflow: visible;
-  gap: 0.35rem;
-  padding: 0.5rem;
 }
 
 .demo-retro-main-fields > div {
   flex: 0 0 12rem;
 }
 
-.demo-retro-main-fields .demo-retro-input {
-  width: 100%;
-  height: 1.65rem;
-}
-
-.demo-retro-tiny-fields {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.35rem;
-  min-height: 2rem;
-  padding: 0.35rem;
-}
-
 .demo-retro-single-character {
-  flex: 0 0 1.5rem;
   width: 1.5rem;
-  min-width: 1.5rem;
-  height: 1.5rem;
-  padding: 0;
   border: 1px solid #8b8b83;
-  border-radius: 0;
-  background: #fffef9;
-  color: #222;
-  font: inherit;
-  text-align: center;
 }
 
 .demo-retro-input {
-  display: block;
   width: 100%;
   min-width: 0;
   height: 1.65rem;
@@ -614,7 +545,6 @@ body {
   background: #fffef9;
   box-shadow: inset 1px 1px #b1b1a8;
   color: #222;
-  font: inherit;
 }
 
 .demo-retro-input:focus,
@@ -622,9 +552,6 @@ body {
   border-color: #6b7568;
   outline: 1px solid #738071;
   outline-offset: -2px;
-  background: #fffef9;
-  color: #222;
-  box-shadow: inset 1px 1px #b1b1a8;
 }
 
 .demo-retro-input.demo-retro-disabled {
@@ -632,25 +559,11 @@ body {
   color: #85857f;
 }
 
-.demo-retro-options {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.2rem;
-  min-height: 2rem;
-  padding: 0.35rem;
-}
-
 .demo-retro-options input {
   appearance: none;
-  flex: 0 0 5px;
   width: 5px;
-  min-width: 5px;
   height: 5px;
-  margin: 0;
   border: 1px solid #74766e;
-  border-radius: 0;
   background: #fffef9;
   box-shadow: inset 1px 1px #d0cec4;
 }
@@ -664,36 +577,7 @@ body {
   text-align: center;
 }
 
-.demo-retro-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  min-height: 2rem;
-  padding: 0.35rem;
-}
-
-.demo-retro-actions button {
-  min-height: 1.55rem;
-  padding: 0.15rem 0.45rem;
-  border: 1px solid #85857e;
-  border-radius: 0;
-  background: #d8d6cb;
-  box-shadow: inset 1px 1px #fffef6, inset -1px -1px #aaa99f;
-  color: #5a5b55;
-  font: inherit;
-}
-
-.demo-retro-actions button:disabled {
-  opacity: 1;
-}
-
-.demo-retro-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  padding: 0.35rem;
-}
-
+.demo-retro-actions button,
 .demo-retro-buttons button {
   padding: 0.15rem 0.45rem;
   border: 1px solid #85857e;
@@ -701,27 +585,20 @@ body {
   background: #d8d6cb;
   box-shadow: inset 1px 1px #fffef6, inset -1px -1px #aaa99f;
   color: #5a5b55;
-  font: inherit;
 }
 
+.demo-retro-actions button:disabled,
 .demo-retro-buttons button:disabled {
   opacity: 1;
 }
 
-.demo-retro-labels {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem;
+.demo-retro-actions button {
+  min-height: 1.55rem;
 }
 
 .demo-retro-labels label {
-  display: inline-block;
-  margin: 0;
   padding: 0.2rem 0.4rem;
   border: 1px solid currentColor;
-  font: inherit;
 }
 
 .demo-retro-labels label:nth-child(1) { background: #163b68; color: #fff; font-weight: bold; }
@@ -735,11 +612,7 @@ body {
 .demo-retro-labels label:nth-child(9) { background: #aa142e; color: #fff4a8; font-size: 0.6rem; letter-spacing: 0.2em; }
 .demo-retro-labels label:nth-child(10) { background: #e2a32c; color: #4025a0; font-family: cursive; font-weight: bold; }
 
-.demo-retro-mover {
-  min-height: 2rem;
-}
-
-.demo-retro-mover-anchor {
+.demo-retro-row {
   min-height: 2rem;
 }
 
@@ -751,16 +624,6 @@ body {
   border-radius: 0;
   background: #d8d6cb;
   color: #222;
-  font: inherit;
-}
-
-.demo-retro-slider,
-.demo-retro-equation {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-height: 2rem;
-  padding: 0.35rem;
 }
 
 .demo-retro-slider input {
@@ -771,7 +634,6 @@ body {
 .demo-retro-slider output {
   min-width: 2ch;
   color: #242720;
-  font: inherit;
 }
 
 .demo-retro-equation input {
@@ -782,11 +644,9 @@ body {
   border-radius: 0;
   background: #fffef9;
   color: #222;
-  font: inherit;
 }
 
 .demo-retro-actions img {
-  display: block;
   width: 1rem;
   height: 1rem;
   font-size: 0.65rem;
