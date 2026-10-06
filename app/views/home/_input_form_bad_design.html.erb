@@ -1,21 +1,21 @@
-<section class="demo-windows-window text-dark" aria-label="Windows-style profile setup window">
+<section class="demo-windows-window bg-white text-black" aria-label="Windows-style profile setup window">
 <header class="demo-windows-titlebar d-flex align-items-center gap-2 px-1 text-white fw-bold">
-  <span class="demo-windows-app-icon d-grid align-items-center justify-content-center border border-white" aria-hidden="true">P</span>
+  <span class="demo-windows-app-icon d-grid align-items-center justify-content-center border border-white bg-white" aria-hidden="true">P</span>
   <span class="demo-windows-title flex-fill">Profile Setup</span>
     <div class="demo-windows-controls d-flex gap-1" aria-hidden="true">
-      <span class="d-grid align-items-center justify-content-center text-dark">_</span><span class="d-grid align-items-center justify-content-center text-dark">□</span><span class="d-grid align-items-center justify-content-center text-dark">×</span>
+      <span class="d-grid align-items-center justify-content-center bg-white text-black">_</span><span class="d-grid align-items-center justify-content-center bg-white text-black">□</span><span class="d-grid align-items-center justify-content-center bg-white text-black">×</span>
     </div>
   </header>
-  <nav class="demo-windows-menubar d-flex align-items-center gap-2 gap-sm-3 border-bottom border-secondary text-dark" aria-label="Window menu">
+  <nav class="demo-windows-menubar d-flex align-items-center gap-2 gap-sm-3 border-bottom border-secondary bg-white text-black" aria-label="Window menu">
     <span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>H</u>elp</span>
   </nav>
-  <div class="demo-windows-screen p-1">
-    <form class="demo-input-form demo-retro-kit overflow-visible p-1">
+  <div class="demo-windows-screen bg-white p-1">
+    <form class="demo-input-form demo-retro-kit bg-white text-black overflow-visible p-1">
       <section class="demo-retro-panel position-relative bg-transparent shadow-none overflow-visible demo-retro-main-fields d-flex flex-nowrap align-items-center gap-1 p-2 ps-4" data-section-number="1">
-        <div><input name="first_name" aria-label="Name" class="demo-retro-input d-block rounded-0 demo-retro-focused bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="last_name" aria-label="Last name" class="demo-retro-input d-block rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="username" aria-label="Username" class="demo-retro-input d-block rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="email" aria-label="Email" class="demo-retro-input d-block rounded-0 bad-input" type="email" oninput="randomizeBadInput(this)"></div>
+        <div><input name="first_name" aria-label="Name" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 demo-retro-focused bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="last_name" aria-label="Last name" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="username" aria-label="Username" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="email" aria-label="Email" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="email" oninput="randomizeBadInput(this)"></div>
       </section>
 
       <div class="demo-retro-sections position-relative d-flex flex-column gap-2">
@@ -35,13 +35,13 @@
         </section>
 
         <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-actions d-flex flex-wrap gap-1 p-1 ps-4" aria-label="Actions" data-section-number="4">
-          <button class="rounded-0" type="button" disabled><span data-button-label>Flibber</span></button>
-          <button class="rounded-0" type="button" disabled><span data-button-label>Save</span><img class="d-block" src="data:image/gif;base64,broken" alt=""></button>
+          <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Flibber</span></button>
+          <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Save</span><img class="d-block" src="data:image/gif;base64,broken" alt=""></button>
         </section>
 
         <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-buttons d-flex flex-wrap gap-1 p-1 ps-4" aria-label="More actions" data-section-number="5">
           <% 10.times do |index| %>
-            <button class="rounded-0" type="button" disabled><span data-button-label>Button <%= index + 1 %></span></button>
+            <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Button <%= index + 1 %></span></button>
           <% end %>
         </section>
 
@@ -52,7 +52,7 @@
 
         <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-equation d-flex align-items-center gap-1 p-1 ps-4" aria-label="Answer the equation" data-section-number="7">
           <span>1 + 1 =</span>
-          <input class="rounded-0 bad-input" type="text" aria-label="Answer" autocomplete="off" oninput="randomizeBadInput(this)">
+          <input class="rounded-0 bg-white text-black bad-input" type="text" aria-label="Answer" autocomplete="off" oninput="randomizeBadInput(this)">
         </section>
 
         <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-labels d-flex flex-wrap align-items-center gap-1 p-1 ps-4" aria-label="Unrelated labels" data-section-number="8">
@@ -69,10 +69,10 @@
         </section>
 
         <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-mover-anchor ps-4" aria-label="Moving action" data-section-number="9"></section>
-        <button class="demo-retro-moving-button position-absolute z-3 rounded-0" type="button" data-button-label>Catch me</button>
+        <button class="demo-retro-moving-button position-absolute z-3 rounded-0 text-black" type="button" data-button-label>Catch me</button>
       </div>
     </form>
   </div>
-  <footer class="demo-windows-statusbar d-flex align-items-center gap-1">
+  <footer class="demo-windows-statusbar d-flex align-items-center gap-1 bg-white text-black">
     <span class="flex-fill">Ready</span><span class="flex-fill">Profile Setup</span>
   </footer>

@@ -23,7 +23,7 @@
     <div class="profile-banner card bg-black border-0 shadow-lg mb-4">
       <div class="profile-banner-art rounded-top"></div>
       <div class="card-body d-flex flex-wrap align-items-center gap-3 pt-0">
-        <div class="profile-avatar d-flex align-items-center justify-content-center border border-4 border-black rounded-circle" aria-hidden="true">
+        <div class="profile-avatar d-flex align-items-center justify-content-center border border-4 border-black rounded-circle text-black text-opacity-75" aria-hidden="true">
           <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, alt: "", class: "w-100 h-100 rounded-circle" %>
           <% else %>

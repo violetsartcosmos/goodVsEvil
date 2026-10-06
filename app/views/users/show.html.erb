@@ -6,7 +6,7 @@
   <section class="profile-hero card bg-black border-0 shadow-lg mb-4 text-center">
     <div class="profile-hero-art rounded-top"></div>
     <div class="card-body position-relative pt-0 pb-4">
-      <div class="profile-avatar profile-avatar-lg d-flex align-items-center justify-content-center border border-4 border-black rounded-circle mx-auto" aria-hidden="true">
+      <div class="profile-avatar profile-avatar-lg d-flex align-items-center justify-content-center border border-4 border-black rounded-circle mx-auto text-black text-opacity-75" aria-hidden="true">
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar, alt: "", class: "w-100 h-100 rounded-circle" %>
         <% else %>
