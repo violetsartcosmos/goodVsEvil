@@ -11,51 +11,51 @@
   </nav>
   <div class="demo-windows-screen bg-white p-1">
     <form class="demo-input-form demo-retro-kit bg-white text-black overflow-visible p-1">
-      <section class="demo-retro-panel position-relative bg-transparent shadow-none overflow-visible demo-retro-main-fields d-flex flex-nowrap align-items-center gap-1 p-2 ps-4" data-section-number="1">
-        <div><input name="first_name" aria-label="Name" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 demo-retro-focused bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="last_name" aria-label="Last name" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="username" aria-label="Username" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
-        <div><input name="email" aria-label="Email" class="demo-retro-input d-block w-100 bg-white text-black rounded-0 bad-input" type="email" oninput="randomizeBadInput(this)"></div>
+      <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none overflow-visible demo-retro-main-fields d-flex flex-nowrap align-items-center gap-1 p-2 ps-4" data-section-number="1">
+        <div><input name="first_name" aria-label="Name" class="demo-retro-input border border-1 border-secondary d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="last_name" aria-label="Last name" class="demo-retro-input border border-1 border-secondary d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="username" aria-label="Username" class="demo-retro-input border border-1 border-secondary d-block w-100 bg-white text-black rounded-0 bad-input" type="text" oninput="randomizeBadInput(this)"></div>
+        <div><input name="email" aria-label="Email" class="demo-retro-input border border-1 border-secondary d-block w-100 bg-white text-black rounded-0 bad-input" type="email" oninput="randomizeBadInput(this)"></div>
       </section>
 
       <div class="demo-retro-sections position-relative d-flex flex-column gap-2">
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row d-flex flex-nowrap align-items-center gap-1 p-1 ps-4" data-section-number="2">
-          <input name="phone" aria-label="Phone" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
-          <input name="address" aria-label="Address" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
-          <input name="language" aria-label="Language" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row d-flex flex-nowrap align-items-center gap-1 p-1 ps-4" data-section-number="2">
+          <input name="phone" aria-label="Phone" class="demo-retro-single-character border border-1 border-secondary bad-input" type="text" oninput="randomizeBadInput(this)">
+          <input name="address" aria-label="Address" class="demo-retro-single-character border border-1 border-secondary bad-input" type="text" oninput="randomizeBadInput(this)">
+          <input name="language" aria-label="Language" class="demo-retro-single-character border border-1 border-secondary bad-input" type="text" oninput="randomizeBadInput(this)">
           <% 10.times do |index| %>
-            <input name="single_character_<%= index + 1 %>" aria-label="Single-character field <%= index + 1 %>" class="demo-retro-single-character bad-input" type="text" oninput="randomizeBadInput(this)">
+            <input name="single_character_<%= index + 1 %>" aria-label="Single-character field <%= index + 1 %>" class="demo-retro-single-character border border-1 border-secondary bad-input" type="text" oninput="randomizeBadInput(this)">
           <% end %>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-options d-flex flex-nowrap align-items-center gap-1 p-1 ps-4" aria-label="Options" data-section-number="3">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row demo-retro-options d-flex flex-nowrap align-items-center gap-1 p-1 ps-4" aria-label="Options" data-section-number="3">
           <% 10.times do |index| %>
-            <input name="option_<%= index + 1 %>" aria-label="Option <%= index + 1 %>" class="bad-input" type="checkbox" oninput="randomizeBadInput(this)">
+            <input name="option_<%= index + 1 %>" aria-label="Option <%= index + 1 %>" class="border border-1 border-secondary bad-input" type="checkbox" oninput="randomizeBadInput(this)">
           <% end %>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-actions d-flex flex-wrap gap-1 p-1 ps-4" aria-label="Actions" data-section-number="4">
-          <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Flibber</span></button>
-          <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Save</span><img class="d-block" src="data:image/gif;base64,broken" alt=""></button>
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row demo-retro-actions d-flex flex-wrap gap-1 p-1 ps-4" aria-label="Actions" data-section-number="4">
+          <button class="border border-1 border-secondary rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Flibber</span></button>
+          <button class="border border-1 border-secondary rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Save</span><img class="d-block" src="data:image/gif;base64,broken" alt=""></button>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-buttons d-flex flex-wrap gap-1 p-1 ps-4" aria-label="More actions" data-section-number="5">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-buttons d-flex flex-wrap gap-1 p-1 ps-4" aria-label="More actions" data-section-number="5">
           <% 10.times do |index| %>
-            <button class="rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Button <%= index + 1 %></span></button>
+            <button class="border border-1 border-secondary rounded-0 text-black text-opacity-75" type="button" disabled><span data-button-label>Button <%= index + 1 %></span></button>
           <% end %>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-slider d-flex align-items-center gap-1 p-1 ps-4" aria-label="Unpredictable slider" data-section-number="6">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row demo-retro-slider d-flex align-items-center gap-1 p-1 ps-4" aria-label="Unpredictable slider" data-section-number="6">
           <input class="bad-input" type="range" min="0" max="100" value="0" aria-label="Unpredictable value" oninput="randomizeBadInput(this)">
           <output>0</output>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-equation d-flex align-items-center gap-1 p-1 ps-4" aria-label="Answer the equation" data-section-number="7">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row demo-retro-equation d-flex align-items-center gap-1 p-1 ps-4" aria-label="Answer the equation" data-section-number="7">
           <span>1 + 1 =</span>
-          <input class="rounded-0 bg-white text-black bad-input" type="text" aria-label="Answer" autocomplete="off" oninput="randomizeBadInput(this)">
+          <input class="border border-1 border-secondary rounded-0 bg-white text-black bad-input" type="text" aria-label="Answer" autocomplete="off" oninput="randomizeBadInput(this)">
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-labels d-flex flex-wrap align-items-center gap-1 p-1 ps-4" aria-label="Unrelated labels" data-section-number="8">
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-labels d-flex flex-wrap align-items-center gap-1 p-1 ps-4" aria-label="Unrelated labels" data-section-number="8">
           <label class="m-0">Account</label>
           <label class="m-0">Required</label>
           <label class="m-0">OPTIONAL</label>
@@ -68,11 +68,11 @@
           <label class="m-0">CONTINUE</label>
         </section>
 
-        <section class="demo-retro-panel position-relative bg-transparent shadow-none demo-retro-row demo-retro-mover-anchor ps-4" aria-label="Moving action" data-section-number="9"></section>
+        <section class="demo-retro-panel border border-1 border-secondary position-relative bg-transparent shadow-none demo-retro-row demo-retro-mover-anchor ps-4" aria-label="Moving action" data-section-number="9"></section>
         <button class="demo-retro-moving-button position-absolute z-3 rounded-0 text-black" type="button" data-button-label>Catch me</button>
       </div>
     </form>
   </div>
-  <footer class="demo-windows-statusbar d-flex align-items-center gap-1 bg-white text-black">
+  <footer class="demo-windows-statusbar border-top border-secondary d-flex align-items-center gap-1 bg-white text-black">
     <span class="flex-fill">Ready</span><span class="flex-fill">Profile Setup</span>
   </footer>
