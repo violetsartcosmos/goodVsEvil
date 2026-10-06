@@ -362,3 +362,7 @@ body {
     width: 1rem;
   }
 }
+
+.profile-icon {
+  font-size: 4rem;
+}
