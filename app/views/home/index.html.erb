@@ -191,10 +191,10 @@
                       <h5 class="card-title">Top Players</h5>
                       <div>
                         <table class="table">
-                        <% User.order(created_at: :desc).limit(3).each_with_index do |user, index| %>
+                        <% User.order(created_at: :desc).limit(5).each_with_index do |user, index| %>
                           <tr>
                             <td><i class="bi bi-person-circle me-2"></i> <%= user.username %></td>
-                            <td>Score: <%= (3 - index) * 4 %></td>
+                            <td><i class="bi bi-trophy me-2"></i> <%= (3 - index) * 4 %></td>
                           </tr>
                         <% end %>
                         </table>
