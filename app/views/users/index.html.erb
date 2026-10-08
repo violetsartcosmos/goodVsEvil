@@ -1,42 +1,47 @@
-<main class="container profile-page py-5">
-  <section class="profile-hero card bg-black border-0 shadow-lg mb-4">
-    <div class="profile-hero-art rounded-top"></div>
-    <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-3">
-      <div>
-        <div class="text-uppercase small fw-semibold text-info mb-2">Good Vs Evil community</div>
-        <h1 class="h2 fw-bold mb-1">User profiles</h1>
-        <p class="text-body-secondary mb-0">Meet the people in your community.</p>
-      </div>
-      <%= link_to "Add user", new_user_path, class: "btn btn-info fw-semibold px-4" %>
-    </div>
-  </section>
+<main class="container">
 
-  <section class="card profile-card bg-black border border-light border-opacity-10 shadow-lg">
+  <section class="">
+    <div class="position-relative mb-3">
+      <%= search_field_tag :search, params[:search], class: "form-control w-100 rounded-4 ps-5", autofocus: true %>
+      <i class="bi bi-search position-absolute top-50 start-0 ms-3 translate-middle-y text-body-secondary" aria-hidden="true"></i>
+    </div>
     <div class="table-responsive">
-      <table class="table table-hover align-middle mb-0">
+      <table class="table table-black table-hover align-middle mb-0">
         <thead>
           <tr>
-            <th scope="col">Full name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
             <th scope="col">Username</th>
-            <th scope="col">Email address</th>
-            <th scope="col">Phone number</th>
-            <th scope="col">Address</th>
-            <th scope="col">Language</th>
-            <th scope="col" class="text-end">Actions</th>
+            <th scope="col">Email</th>
+            <th scope="col" class="text-center">Active</th>
+            <th scope="col" class="text-center">Level</th>
+            <th scope="col" class="text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
           <% @users.each do |user| %>
             <tr>
+              <td><%= user.id %></td>
               <td><%= link_to [user.first_name, user.last_name].compact_blank.join(" ").presence || "-", user_path(user), class: "text-decoration-none fw-semibold" %></td>
-              <td><%= user.username %></td>
-              <td><%= user.email %></td>
-              <td><%= user.phone.presence || "—" %></td>
-              <td><%= user.address.presence || "—" %></td>
-              <td><%= user.language.presence || "—" %></td>
-              <td class="text-end text-nowrap">
-                <%= link_to "Edit", edit_user_path(user), class: "btn btn-sm btn-outline-info me-1" %>
-                <%= link_to "Delete", user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this user?" }, class: "btn btn-sm btn-outline-danger" %>
+              <td class="truncate"><%= user.username %></td>
+              <td class="truncate"><%= user.email %></td>
+              <td class="text-center">
+                <% if rand(1000000000..9999999999).even? %>
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                <% else %>
+                  <i class="bi bi-x-circle-fill text-danger"></i>
+                <% end %>
+              </td>
+              <td class="text-center">
+                <i class="bi bi-<%= rand(1..9) %>-circle-fill text-<%= ["info", "success", "warning", "danger"].sample %>"></i> 
+              </td>
+              <td class="text-center text-nowrap">
+                <%= link_to edit_user_path(user), class: "btn btn-sm btn-outline-info me-1" do %>
+                  <i class="bi bi-pencil-fill"></i>
+                <% end %>
+                <%= link_to user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this user?" }, class: "btn btn-sm btn-outline-danger" do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
               </td>
             </tr>
           <% end %>

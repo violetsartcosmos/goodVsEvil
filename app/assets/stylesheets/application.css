@@ -13,10 +13,6 @@ body {
   background-image: radial-gradient(ellipse at 15% 0%, rgba(78, 91, 190, 0.16), transparent 38rem);
 }
 
-.profile-page {
-  max-width: 1100px;
-}
-
 .profile-banner-art,
 .profile-hero-art {
   background: linear-gradient(115deg, #9b65df 42%, #e16ea4 72%, #ee9d70);
@@ -28,7 +24,7 @@ body {
 }
 
 .profile-hero-art {
-  height: 10rem;
+  height: 4rem;
 }
 
 .profile-avatar {
@@ -82,25 +78,6 @@ body {
   background: linear-gradient(145deg, #8b7bff, #37cdb8);
 }
 
-.showcase-top-nav {
-  background: rgba(var(--bs-white-rgb), 0.025);
-}
-
-.showcase-top-nav .nav-link {
-  color: var(--bs-secondary-color);
-}
-
-.showcase-top-nav .nav-link.active,
-.showcase-top-nav .showcase-good-tab.active {
-  background-color: rgba(85, 216, 190, 0.13);
-  color: #70e3ce;
-  font-weight: 600;
-}
-
-.showcase-top-nav .showcase-bad-tab.active {
-  background-color: rgba(240, 100, 112, 0.2);
-  color: #ff7d87;
-}
 
 .showcase-category-nav .nav-link {
   flex-basis: 10rem;
@@ -365,4 +342,11 @@ body {
 
 .profile-icon {
   font-size: 4rem;
+}
+
+.table-black {
+  background-color: #000;
+  color: #fff;
+  --bs-table-bg: #000 !important;
+
 }

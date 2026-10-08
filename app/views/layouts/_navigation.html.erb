@@ -1,16 +1,31 @@
-<header class="container site-header d-flex flex-wrap justify-content-between align-items-center gap-3 py-4">
-  <%= link_to root_path, class: "showcase-brand d-inline-flex align-items-center gap-2 text-decoration-none text-white fw-bold fs-5" do %>
-    <span class="showcase-brand-mark d-grid align-items-center justify-content-center rounded-4 text-black text-opacity-75 fw-bold" aria-hidden="true">G</span>
-    <span>Good <span class="text-info">Vs</span> Evil</span>
+<header class="site-header d-flex flex-wrap justify-content-between align-items-center gap-3 mt-0 mx-0">
+  <section class="profile-hero-art bg-black border-0 shadow-lg mb-4 position-relative w-100 px-2">
+
+    <div class="d-flex align-items-center justify-content-between p-1" aria-label="Main navigation">
+        <%= link_to root_path, class: "showcase-brand d-inline-flex align-items-center gap-2 text-decoration-none text-white fw-bold fs-5" do %>
+          <span class="showcase-brand-mark d-grid align-items-center justify-content-center rounded-4 text-black text-opacity-75 fw-bold" aria-hidden="true">G</span>
+          <span>Good <span class="text-info">Vs</span> Evil</span>
+        <% end %>
+        <div class="d-flex button-group" role="group" aria-label="Choose design quality">
+          <button id="good-quality-toggle" class="nav-link showcase-good-tab active px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="good" aria-pressed="true" onclick="showDesignQuality('good')">Good</button>
+          <button id="bad-quality-toggle" class="nav-link showcase-bad-tab px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="bad" aria-pressed="false" onclick="showDesignQuality('bad')">Bad</button>
+          <%= link_to "Users", users_path, class: "nav-link px-3 py-2 rounded-pill#{' active' if controller_name == 'users'}", aria: { current: ("page" if controller_name == 'users') } %>
+
+        </div>
+    </div>
+  </section>
+
+  <% if controller_name == 'users' %>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 w-100 container mb-4">
+      <div>
+        <div class="text-uppercase small fw-semibold text-info mb-2">Good Vs Evil community</div>
+        <h1 class="h2 fw-bold mb-1">User profiles</h1>
+        <p class="text-body-secondary mb-0">Meet the people in your community.</p>
+      </div>
+      
+      <%= link_to "Add user", new_user_path, class: "btn btn-info fw-semibold px-4" %>
+    </div>
   <% end %>
 
-  <nav class="nav nav-pills showcase-top-nav align-items-center gap-2 border border-light border-opacity-10 rounded-pill p-1" aria-label="Main navigation">
-    <% if controller_name == "home" %>
-      <div class="nav-item d-flex" role="group" aria-label="Choose design quality">
-        <button id="good-quality-toggle" class="nav-link showcase-good-tab active px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="good" aria-pressed="true" onclick="showDesignQuality('good')">Good</button>
-        <button id="bad-quality-toggle" class="nav-link showcase-bad-tab px-3 py-2 rounded-pill fw-semibold" type="button" data-design-quality="bad" aria-pressed="false" onclick="showDesignQuality('bad')">Bad</button>
-      </div>
-    <% end %>
-    <%= link_to "Users", users_path, class: "nav-link px-3 py-2 rounded-pill#{' active' if controller_name == 'users'}", aria: { current: ("page" if controller_name == 'users') } %>
-  </nav>
+
 </header>
