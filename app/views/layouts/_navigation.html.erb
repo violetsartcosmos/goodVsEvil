@@ -1,7 +1,7 @@
 <header class="site-header d-flex flex-wrap justify-content-between align-items-center gap-3 mt-0 mx-0">
   <section class="profile-hero-art bg-black border-0 shadow-lg mb-4 position-relative w-100 px-2">
 
-    <div class="d-flex align-items-center justify-content-between p-1" aria-label="Main navigation">
+    <div class="d-flex align-items-center justify-content-between h-100" aria-label="Main navigation">
         <%= link_to root_path, class: "showcase-brand d-inline-flex align-items-center gap-2 text-decoration-none text-white fw-bold fs-5" do %>
           <span class="showcase-brand-mark d-grid align-items-center justify-content-center rounded-4 text-black text-opacity-75 fw-bold" aria-hidden="true">G</span>
           <span>Good <span class="text-info">Vs</span> Evil</span>
@@ -22,8 +22,10 @@
         <h1 class="h2 fw-bold mb-1">User profiles</h1>
         <p class="text-body-secondary mb-0">Meet the people in your community.</p>
       </div>
-      
-      <%= link_to "Add user", new_user_path, class: "btn btn-info fw-semibold px-4" %>
+      <div>
+        <%= link_to "Add user", new_user_path, class: "btn btn-info fw-semibold px-4" %>
+        <%= link_to "Login", new_session_path, class: "btn btn-info fw-semibold px-4" %>
+      </div>
     </div>
   <% end %>
 
